@@ -1,9 +1,9 @@
 (setq load-path
 	  (append
 	   (list
-		(expand-file-name "~/mylisp")
-		(expand-file-name "~/mylisp/apel")
-		(expand-file-name "~/mylisp/navi2ch")
+		(expand-file-name "~/.mylisp")
+		(expand-file-name "~/.mylisp/apel")
+		(expand-file-name "~/.mylisp/navi2ch")
 		)load-path))
 
 ;;; 日本語環境

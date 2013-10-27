@@ -62,7 +62,7 @@ function copy_alias()
 
 function copy_mylisp()
 {
-    COPY_TO_PATH="${HOME}/mylisp";
+    COPY_TO_PATH="${HOME}/.mylisp";
     COPY_FROM_PATH="${CURRENT_DIR}/mylisp";
     BACKUP_PATH="${HOME}/mylisp.old";
 
