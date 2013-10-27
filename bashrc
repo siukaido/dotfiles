@@ -3,6 +3,8 @@
 shopt -s checkwinsize
 export EDITOR=/usr/bin/emacs
 export PATH=/sbin:/usr/sbin:/usr/local/sbin:/bin:/usr/local/bin:/usr/bin
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
 export LIBRARY_PATH=/usr/local/include/:${LIBRARY_PATH}
 export HISTTIMEFORMAT="%y/%m/%d %H:%M:%S: "
 #export DISPLAY=:99
@@ -25,6 +27,8 @@ export HISTSIZE=300000
 # 日本語設定
 export LANG=ja_JP.UTF-8
 export LC_AL=ja_JP.UTF-8
+# export LANG=ja_JP.eucJP
+# export LC_AL=ja_JP.eucJP
 
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
@@ -40,6 +44,11 @@ fi
 # git settings
 source "${HOME}/.git-completion.bash"
 GIT_PS1_SHOWDIRTYSTATE=true
+
+# vagrant completion
+if [ -f `brew --prefix`/etc/bash_completion.d/vagrant ]; then
+    source `brew --prefix`/etc/bash_completion.d/vagrant
+fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
