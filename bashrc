@@ -9,12 +9,12 @@ export LIBRARY_PATH=/usr/local/include/:${LIBRARY_PATH}
 export HISTTIMEFORMAT="%y/%m/%d %H:%M:%S: "
 #export DISPLAY=:99
 
-# Bash 4.0 ¤Î³ÈÄ¥ºòÆü
+# Bash 4.0 ã®æ‹¡å¼µæ˜¨æ—¥
 shopt -s globstar
 shopt -s autocd
 shopt -s dirspell
 
-# Ê£¿ôÃ¼Ëö´Ö¤ÇÍúÎò¤ò¶¦Í­
+# è¤‡æ•°ç«¯æœ«é–“ã§å±¥æ­´ã‚’å…±æœ‰
 function share_history {
     history -a
     history -c
@@ -24,7 +24,7 @@ PROMPT_COMMAND='share_history'
 shopt -u histappend
 export HISTSIZE=300000
 
-# ÆüËÜ¸ìÀßÄê
+# æ—¥æœ¬èªè¨­å®š
 export LANG=ja_JP.UTF-8
 export LC_AL=ja_JP.UTF-8
 # export LANG=ja_JP.eucJP
@@ -63,12 +63,12 @@ xterm-color)
     ;;
 esac
 
-# aliasÀßÄê
+# aliasè¨­å®š
 if [ -f ~/.bash/bash_alias ]; then
 	source "${HOME}/.bash/bash_alias"
 fi
 
-# ¥Õ¥¡¡¼¥¹¥È¥í¥°¥¤¥ó¤Ïscreen¤ò¼«Æ°µ¯Æ°
+# ãƒ•ã‚¡ãƒ¼ã‚¹ãƒˆãƒ­ã‚°ã‚¤ãƒ³ã¯screenã‚’è‡ªå‹•èµ·å‹•
 if [ `ps aux | grep "$USER" | grep screen | grep -v Xvfb | wc -l` -le 1 ];
 then
 	if [ -e /var/run/screen/S-"$USER"/* ];

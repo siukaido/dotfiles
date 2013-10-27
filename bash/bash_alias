@@ -23,7 +23,7 @@ alias gitst="git st"
 alias myfork="git branch -a | grep myfork"
 alias rmds='sudo find /. -name ".DS_Store" -exec rm {} \;'
 
-# svn·Ï
+# svnç³»
 alias st="svn status"
 alias svnst="svn status"
 alias svns="svn status"

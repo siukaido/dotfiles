@@ -8,7 +8,7 @@
         di=diff
         up=pull --rebase
 
-# log¤òtreeÉ½¼¨
+# logã‚’treeè¡¨ç¤º
   log-graph = log --graph --date=short --pretty=format:'%h %cd %cn %s'
   log-all = log --graph --all --pretty='%x09%h %cn%x09%s %d'
 [color]

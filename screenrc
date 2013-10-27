@@ -1,13 +1,13 @@
-escape ^t^t                          # prefix¥­¡¼¤òC-t¤Ë¤¹¤ë
-vbell off                            # visible bell ¤ò»ÈÍÑ¤·¤Ê¤¤
-#bind w windowlist -b                # window list ¤ÎÉ½¼¨ÊıË¡¤òÊÑ¹¹
-#deflogin off                        # ¿·¤·¤¤window¤ò³«¤¯ÅÙ¤Ë/etc/utmp¤Ëentry¤òÄÉ²Ã¤¹¤ë¤«
-#bell "Bell in window %."            # ±£¤ì¤Æ¤¤¤ëwindow¤Ç¤Îbell¤òÄÌÃÎ
-#activity "Activity in window %."    # ±£¤ì¤Æ¤¤¤ëwindow¤Î¾õÂÖÊÑ²½¤òÄÌÃÎ
-autodetach on                        # ²óÀş¤¬ÀÚ¤ì¤¿¾ì¹ç¤Ë¼«Æ°Åª¤Ë¥Ç¥¿¥Ã¥Á¤¹¤ë¤«
+escape ^t^t                          # prefixã‚­ãƒ¼ã‚’C-tã«ã™ã‚‹
+vbell off                            # visible bell ã‚’ä½¿ç”¨ã—ãªã„
+#bind w windowlist -b                # window list ã®è¡¨ç¤ºæ–¹æ³•ã‚’å¤‰æ›´
+#deflogin off                        # æ–°ã—ã„windowã‚’é–‹ãåº¦ã«/etc/utmpã«entryã‚’è¿½åŠ ã™ã‚‹ã‹
+#bell "Bell in window %."            # éš ã‚Œã¦ã„ã‚‹windowã§ã®bellã‚’é€šçŸ¥
+#activity "Activity in window %."    # éš ã‚Œã¦ã„ã‚‹windowã®çŠ¶æ…‹å¤‰åŒ–ã‚’é€šçŸ¥
+autodetach on                        # å›ç·šãŒåˆ‡ã‚ŒãŸå ´åˆã«è‡ªå‹•çš„ã«ãƒ‡ã‚¿ãƒƒãƒã™ã‚‹ã‹
 #detach on hangup
-startup_message off                  # ¥¹¥¿¡¼¥È¥¢¥Ã¥×¥Ú¡¼¥¸¤òÉ½¼¨¤¹¤ë¤«
-#altscreen on                        # ¥¨¥Ç¥£¥¿½ªÎ»»ş¤Ëdisplay clear¤ò¤¹¤ë¤«
+startup_message off                  # ã‚¹ã‚¿ãƒ¼ãƒˆã‚¢ãƒƒãƒ—ãƒšãƒ¼ã‚¸ã‚’è¡¨ç¤ºã™ã‚‹ã‹
+#altscreen on                        # ã‚¨ãƒ‡ã‚£ã‚¿çµ‚äº†æ™‚ã«display clearã‚’ã™ã‚‹ã‹
 
 #terminfo and termcap for nice 256 color terminal
 # allow bold colors - necessary for some reason
@@ -17,14 +17,14 @@ term xterm-256color
 # terminfo xterm|kterm|kterm-color XT                                           # for mice
 termcapinfo xterm|xterm-256color 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
 # termcapinfo xterm-256color "Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm"
-# termcapinfo xterm|kterm|kterm-color 'hs:ts=\E]2;:fs=\007:ds=\E]0;screen\007'  # ¥¿¥¤¥È¥ë¥Ğ¡¼¤ò¥¹¥Æ¡¼¥¿¥¹É½¼¨¤Ë»È¤¦
+# termcapinfo xterm|kterm|kterm-color 'hs:ts=\E]2;:fs=\007:ds=\E]0;screen\007'  # ã‚¿ã‚¤ãƒˆãƒ«ãƒãƒ¼ã‚’ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹è¡¨ç¤ºã«ä½¿ã†
 # erase background with current bg color
 defbce "on"
 
 shell -$SHELL        # make the shell in every window a login shell
-defscrollback 1000   # ¥¹¥¯¥í¡¼¥ë¥Ğ¥Ã¥Õ¥¡¹Ô¿ô
+defscrollback 1000   # ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒƒãƒ•ã‚¡è¡Œæ•°
 
-# hardstatus string " %m/%d %D %c [%n:%Lw] %H:%h"                               # statusÉ½¼¨¤Îformat
+# hardstatus string " %m/%d %D %c [%n:%Lw] %H:%h"                               # statusè¡¨ç¤ºã®format
 # bind ^e hardstatus alwayslastline " %m/%d %D %c [%n:%Lw] %H:%h"
 # bind ^h hardstatus ignore
 # hardstatus alwayslastline "%m/%d %D %c [%n:%Lw] %H:%h"
@@ -45,4 +45,4 @@ bind a title
 # defhstatus "^En:^Et"
 # defhstatus "screen: ^E (^Et)"
 
-shelltitle "$ |bash"     # bash¤Î¥³¥Ş¥ó¥É¤òtitle¤ËÈ¿±Ç
+shelltitle "$ |bash"     # bashã®ã‚³ãƒãƒ³ãƒ‰ã‚’titleã«åæ˜ 
