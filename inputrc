@@ -1,0 +1,6 @@
+set completion-ignore-case on
+set expand-tilde on
+
+"\C-n":history-search-forward
+"\C-p":history-search-backward
+

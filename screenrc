@@ -1,0 +1,48 @@
+escape ^t^t                          # prefixキーをC-tにする
+vbell off                            # visible bell を使用しない
+#bind w windowlist -b                # window list の表示方法を変更
+#deflogin off                        # 新しいwindowを開く度に/etc/utmpにentryを追加するか
+#bell "Bell in window %."            # 隠れているwindowでのbellを通知
+#activity "Activity in window %."    # 隠れているwindowの状態変化を通知
+autodetach on                        # 回線が切れた場合に自動的にデタッチするか
+#detach on hangup
+startup_message off                  # スタートアップページを表示するか
+#altscreen on                        # エディタ終了時にdisplay clearをするか
+
+#terminfo and termcap for nice 256 color terminal
+# allow bold colors - necessary for some reason
+attrcolor b ".I"
+# tell screen how to set colors. AB = background, AF=foreground
+term xterm-256color
+# terminfo xterm|kterm|kterm-color XT                                           # for mice
+termcapinfo xterm|xterm-256color 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+# termcapinfo xterm-256color "Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm"
+# termcapinfo xterm|kterm|kterm-color 'hs:ts=\E]2;:fs=\007:ds=\E]0;screen\007'  # タイトルバーをステータス表示に使う
+# erase background with current bg color
+defbce "on"
+
+shell -$SHELL        # make the shell in every window a login shell
+defscrollback 1000   # スクロールバッファ行数
+
+# hardstatus string " %m/%d %D %c [%n:%Lw] %H:%h"                               # status表示のformat
+# bind ^e hardstatus alwayslastline " %m/%d %D %c [%n:%Lw] %H:%h"
+# bind ^h hardstatus ignore
+# hardstatus alwayslastline "%m/%d %D %c [%n:%Lw] %H:%h"
+hardstatus alwayslastline "[%02c] %-w%{=b bw}%n %t%{-}%+w %=(%l) "
+# hardstatus alwayslastline "%{= gk}[%m/%d %02c:%s] %{gW} %-w%{= wk}%n %t%{-}%+w %=%{gk}$USER@$HOSTNAME[$LANG] (%l) "
+# bind ^e hardstatus alwayslastline "%m/%d %D %c [%n:%Lw] %H:%h"
+# bind ^h hardstatus ignore
+# bind 2 split
+# bind 1 only
+# bind 0 remove
+# bind o focus
+bind a title
+# bind \^ resize
+
+## m:month, d:day, D:weekday, c:current time in 24h,
+## n:window number, w:all window numbers, H:hostname,
+## h:hardstatus of the window, l:current load of the system
+# defhstatus "^En:^Et"
+# defhstatus "screen: ^E (^Et)"
+
+shelltitle "$ |bash"     # bashのコマンドをtitleに反映
