@@ -1,6 +1,5 @@
 [user]
 	name = siukaido
-	email = siukaido@gmail.com
 [alias]
         co=checkout
         ci=commit -a
