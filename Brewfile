@@ -1,3 +1,5 @@
+update
+upgrade
 
 # tap repositories and their packages
 
