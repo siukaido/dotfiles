@@ -34,18 +34,10 @@ if [ "$TERM" != "dumb" ]; then
     alias ls='ls --color=auto'
 fi
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" -a -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-# git settings
-source "${HOME}/.git-completion.bash"
-GIT_PS1_SHOWDIRTYSTATE=true
-
 # vagrant completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
+    GIT_PS1_SHOWDIRTYSTATE=true
 fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
