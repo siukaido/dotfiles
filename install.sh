@@ -24,6 +24,7 @@ relink ~/.inputrc      $DIR/inputrc
 relink ~/.screenrc     $DIR/screenrc
 relink ~/.emacs        $DIR/emacs
 
-
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
+if [ `uname` == "Darwin" ]; then
+    echo "Install homebrew"
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi

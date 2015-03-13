@@ -34,6 +34,11 @@ if [ "$TERM" != "dumb" ]; then
     alias ls='ls --color=auto'
 fi
 
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "$debian_chroot" -a -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
 # vagrant completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
@@ -54,15 +59,15 @@ xterm-color)
 esac
 
 # ファーストログインはscreenを自動起動
-if [ `ps aux | grep "$USER" | grep screen | grep -v Xvfb | wc -l` -le 1 ];
-then
-    if [ -e /var/run/screen/S-"$USER"/* ];
-    then
-        screen -r
-    else
-        screen
-    fi
-fi
+# if [ `ps aux | grep "$USER" | grep screen | grep -v Xvfb | wc -l` -le 1 ];
+# then
+#    if [ -e /var/run/screen/S-"$USER"/* ];
+#    then
+#        screen -r
+#    else
+#        screen
+#    fi
+# fi
 
 # alias設定
 # some more ls aliases
