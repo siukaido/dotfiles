@@ -89,6 +89,12 @@
       (autoload 'php-mode "php-mode" "PHP mode" t)
 ;(yas/initialize)
 
+;; ruby-mode
+(require 'ruby-mode)
+(setq auto-mode-alist
+      (cons (cons "\\.\\(erb\\|thor\\|rake\\|rb\\)$" 'ruby-mode) auto-mode-alist))
+      (autoload 'ruby-mode "ruby-mode" "Ruby mode" t)
+
 ;; hook 用の関数の定義
 (defun my-c-mode-common-hook ()
   ;; my-c-stye を有効にする
@@ -156,6 +162,21 @@
 ;; モードに入るときに呼び出す hook の設定
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
+(autoload 'js2-mode "js2-mode" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(add-hook 'js2-mode-hook #'(lambda ()
+                             (setq indent-tabs-mode t)
+                             (c-toggle-hungry-state t)
+                             ))
+
+;;######################################
+;; MarkDown-mode
+;;######################################
+(autoload 'markdown-mode "markdown-mode"
+   "Major mode for editing Markdown files" t)
+(setq auto-mode-alist
+      (cons (cons "\\.\\(text\\|markdown\\|md\\)$" 'markdown-mode) auto-mode-alist))
+
 ;;######################################
 ;; Redo
 ;;######################################
@@ -176,59 +197,59 @@
 ;;######################################
 ;; Elscreen
 ;;######################################
-;(when (locate-library "elscreen")
-;  (setq elscreen-prefix-key "\C-z")
-;  (require 'elscreen))
-;(global-set-key "\M-}" 'elscreen-next)
-;(global-set-key "\M-{" 'elscreen-previous)
-;(define-key elscreen-map "\C-k" 'elscreen-kill-screen-and-buffers)
+(when (locate-library "elscreen")
+  (setq elscreen-prefix-key "\C-z")
+  (require 'elscreen))
+(global-set-key "\M-}" 'elscreen-next)
+(global-set-key "\M-{" 'elscreen-previous)
+(define-key elscreen-map "\C-k" 'elscreen-kill-screen-and-buffers)
 
 ;;######################################
 ;; tabbar
 ;;######################################
-(setq tabber-prefix-key "\C-z")
-(require 'tabbar)
-(tabbar-mode 1)
-;; グループ化しない
-(setq tabbar-buffer-groups-function nil)
-;; 左に表示されるボタンを無効化
-(dolist (btn '(tabbar-buffer-home-button
-               tabbar-scroll-left-button
-               tabbar-scroll-right-button))
-  (set btn (cons (cons "" nil)
-                 (cons "" nil))))
-;;; タブの長さ
-(setq tabbar-separator '(1.0))
-;; 外観変更
-(set-face-attribute
- 'tabbar-default nil
- :background "white")
-(set-face-attribute
- 'tabbar-unselected nil
- :foreground "black"
- :box nil)
-(set-face-attribute ;アクティブなタブ
- 'tabbar-selected nil
- :background "blue"
- :foreground "white"
- :box nil)
-;; タブに表示させるバッファの設定
-(defun my-tabbar-buffer-list ()
-  (delq nil
-        (mapcar #'(lambda (b)
-                    (cond
-                     ((eq (current-buffer) b) b)
-                     ((buffer-file-name b) b)
-                     ((char-equal ?\  (aref (buffer-name b) 0)) nil)
-                          ((equal "*scratch*" (buffer-name b)) b)
-                               ((char-equal ?* (aref (buffer-name b) 0)) nil)
-                     ((buffer-live-p b) b)))
-                (buffer-list))))
-(setq tabbar-buffer-list-function 'my-tabbar-buffer-list)
-(global-set-key (kbd "C-z n") 'tabbar-forward-tab)
-(global-set-key (kbd "C-z p") 'tabbar-backward-tab)
-(global-set-key (kbd "C-z C-n") 'tabbar-forward-tab)
-(global-set-key (kbd "C-z C-p") 'tabbar-backward-tab)
-(global-set-key "\C-z\C-f" 'find-file)
-(global-set-key (kbd "C-z k") 'kill-buffer-and-window)
-(global-set-key (kbd "C-z C-k") 'kill-buffer-and-window)
+; (setq tabber-prefix-key "\C-z")
+; (require 'tabbar)
+; (tabbar-mode 1)
+; ;; グループ化しない
+; (setq tabbar-buffer-groups-function nil)
+; ;; 左に表示されるボタンを無効化
+; (dolist (btn '(tabbar-buffer-home-button
+;                tabbar-scroll-left-button
+;                tabbar-scroll-right-button))
+;   (set btn (cons (cons "" nil)
+;                  (cons "" nil))))
+; ;;; タブの長さ
+; (setq tabbar-separator '(1.0))
+; ;; 外観変更
+; (set-face-attribute
+;  'tabbar-default nil
+;  :background "white")
+; (set-face-attribute
+;  'tabbar-unselected nil
+;  :foreground "black"
+;  :box nil)
+; (set-face-attribute ;アクティブなタブ
+;  'tabbar-selected nil
+;  :background "blue"
+;  :foreground "white"
+;  :box nil)
+; ;; タブに表示させるバッファの設定
+; (defun my-tabbar-buffer-list ()
+;   (delq nil
+;         (mapcar #'(lambda (b)
+;                     (cond
+;                      ((eq (current-buffer) b) b)
+;                      ((buffer-file-name b) b)
+;                      ((char-equal ?\  (aref (buffer-name b) 0)) nil)
+;                           ((equal "*scratch*" (buffer-name b)) b)
+;                                ((char-equal ?* (aref (buffer-name b) 0)) nil)
+;                      ((buffer-live-p b) b)))
+;                 (buffer-list))))
+; (setq tabbar-buffer-list-function 'my-tabbar-buffer-list)
+; (global-set-key (kbd "C-z n") 'tabbar-forward-tab)
+; (global-set-key (kbd "C-z p") 'tabbar-backward-tab)
+; (global-set-key (kbd "C-z C-n") 'tabbar-forward-tab)
+; (global-set-key (kbd "C-z C-p") 'tabbar-backward-tab)
+; (global-set-key "\C-z\C-f" 'find-file)
+; (global-set-key (kbd "C-z k") 'kill-buffer-and-window)
+; (global-set-key (kbd "C-z C-k") 'kill-buffer-and-window)
