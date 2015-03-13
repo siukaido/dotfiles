@@ -65,6 +65,5 @@ appstore Pocket
 appstore Skitch
 appstore StuffIt Expander
 appstore ToyViewer
-appstore World Conqueror 2
 appstore Xcode
 appstore YoruFukurou
