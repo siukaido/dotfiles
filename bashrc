@@ -2,7 +2,7 @@
 [ -z "$PS1" ] && return
 shopt -s checkwinsize
 export EDITOR=/usr/bin/emacs
-export PATH=/sbin:/usr/sbin:/usr/local/sbin:/bin:/usr/local/bin:/usr/bin
+export PATH=/usr/local/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/sbin:/bin
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
 export LIBRARY_PATH=/usr/local/include/:${LIBRARY_PATH}
