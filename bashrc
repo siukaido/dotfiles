@@ -7,7 +7,6 @@ export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
 export LIBRARY_PATH=/usr/local/include/:${LIBRARY_PATH}
 export HISTTIMEFORMAT="%y/%m/%d %H:%M:%S: "
-#export DISPLAY=:99
 
 # Bash 4.0 の拡張機能
 shopt -s globstar

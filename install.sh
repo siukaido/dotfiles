@@ -23,7 +23,7 @@ relink ~/.dir_colors   $DIR/dir_colors
 relink ~/.gitconfig    $DIR/git-config
 relink ~/.inputrc      $DIR/inputrc
 relink ~/.screenrc     $DIR/screenrc
-relink ~/.emacs        $DIR/emacs
+relink ~/.emacs.d      $DIR/emacs.d
 
 if [ `uname` == "Darwin" ]; then
     echo -e "\nINSTALL homebrew"
