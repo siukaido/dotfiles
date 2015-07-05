@@ -5,6 +5,7 @@ export EDITOR=/usr/bin/emacs
 export PATH=/usr/local/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/sbin:/bin
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
+export PATH=$PATH:~/.aws/AWS-ElasticBeanstalk-CLI-2.6.4/eb/macosx/python2.7/
 export LIBRARY_PATH=/usr/local/include/:${LIBRARY_PATH}
 export HISTTIMEFORMAT="%y/%m/%d %H:%M:%S: "
 

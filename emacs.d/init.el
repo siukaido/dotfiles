@@ -37,6 +37,7 @@
     smarty-mode
     ssh-config-mode
     yaml-mode
+    web-mode
     ;; 30
     flyspell
     flycheck
