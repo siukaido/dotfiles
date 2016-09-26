@@ -21,7 +21,6 @@
     auto-complete
     auto-highlight-symbol
     color-theme
-    foreign-regexp
     elscreen
     ;; 20
     apache-mode
@@ -33,7 +32,6 @@
     php-mode
     popwin
     rainbow-mode
-    scala-mode2
     scss-mode
     smarty-mode
     ssh-config-mode
@@ -50,7 +48,6 @@
     ensime
     sbt-mode
     ;; others
-    magit
     web-beautify
     ))
 
@@ -67,3 +64,27 @@
 (require 'init-loader)
 (setq init-loader-show-log-after-init nil)
 (init-loader-load "~/.emacs.d/inits")
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(display-time-mode t)
+ '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages))
+ '(google-translate-default-source-language "en")
+ '(google-translate-default-target-language "ja")
+ '(js-indent-level 2)
+ '(markdown-command "mdown")
+ '(menu-bar-mode nil)
+ '(package-selected-packages
+   (quote
+    (web-beautify sbt-mode ensime google-translate flycheck-pos-tip flycheck typescript-mode coffee-mode web-mode yaml-mode ssh-config-mode smarty-mode scss-mode rainbow-mode popwin php-mode markdown-mode json-mode js2-mode jade-mode google-c-style apache-mode elscreen color-theme auto-highlight-symbol auto-complete init-loader)))
+ '(tool-bar-mode nil)
+ '(transient-mark-mode t)
+ '(vc-handled-backends nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
