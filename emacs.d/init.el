@@ -39,6 +39,7 @@
     web-mode
     coffee-mode
     typescript-mode
+    ruby-mode
     ;; 30
     flyspell
     flycheck
@@ -49,6 +50,7 @@
     sbt-mode
     ;; others
     web-beautify
+    go-mode
     ))
 
 ;; 自動インストール設定
@@ -64,6 +66,7 @@
 (require 'init-loader)
 (setq init-loader-show-log-after-init nil)
 (init-loader-load "~/.emacs.d/inits")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
