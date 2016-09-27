@@ -8,6 +8,8 @@ export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
 export PATH=$PATH:~/.aws/AWS-ElasticBeanstalk-CLI-2.6.4/eb/macosx/python2.7/
 export LIBRARY_PATH=/usr/local/include/:${LIBRARY_PATH}
 export HISTTIMEFORMAT="%y/%m/%d %H:%M:%S: "
+export GOPATH="${HOME}/.go"
+export CONNECTION_REFRESH="true"
 
 # Bash 4.0 の拡張機能
 shopt -s globstar
@@ -102,3 +104,4 @@ alias svnst="svn status"
 alias svns="svn status"
 alias svndi="svn diff"
 alias svnd="svn diff"
+eval "$(thefuck --alias)"
