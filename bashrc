@@ -13,7 +13,7 @@ export CONNECTION_REFRESH="true"
 
 # Bash 4.0 の拡張機能
 shopt -s globstar
-shopt -s autocd
+#shopt -s autocd
 shopt -s dirspell
 
 # 複数端末間で履歴を共有

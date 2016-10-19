@@ -40,6 +40,7 @@
     coffee-mode
     typescript-mode
     ruby-mode
+    slim-mode
     ;; 30
     flyspell
     flycheck
@@ -77,6 +78,7 @@
  '(google-translate-default-source-language "en")
  '(google-translate-default-target-language "ja")
  '(js-indent-level 2)
+ '(js2-basic-offset 2)
  '(markdown-command "mdown")
  '(menu-bar-mode nil)
  '(package-selected-packages
