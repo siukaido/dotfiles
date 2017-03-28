@@ -19,6 +19,7 @@ DIR=$( cd "$( dirname "$0" )" && pwd )
 
 relink ~/.bash_profile $DIR/bash_profile
 relink ~/.bashrc       $DIR/bashrc
+relink ~/.bash_aliases $DIR/bash_aliases
 relink ~/.dir_colors   $DIR/dir_colors
 relink ~/.gitconfig    $DIR/git-config
 relink ~/.inputrc      $DIR/inputrc
