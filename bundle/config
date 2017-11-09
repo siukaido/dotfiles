@@ -1,0 +1,10 @@
+---
+BUNDLE_BUILD__NOKOGIRI: "--use-system-libraries=true --with-xml2-include=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include/libxml2"
+BUNDLE_BUILD__DEBUGGER: "--use-system-libraries"
+BUNDLE_GEM__TEST: "false"
+BUNDLE_GEM__MIT: "false"
+BUNDLE_GEM__COC: "false"
+BUNDLE_GITHUB__HTTPS: "true"
+BUNDLE_PATH: "vendor/bundle"
+BUNDLE_BIN: "vendor/bundle/bin"
+BUNDLE_JOBS: "4"
