@@ -18,19 +18,26 @@
 if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
+# include .bash_aliases if it exists
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+# include .bash_local if it exists
 if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
 
 # set PATH so it includes user's private bin if it exists
-if [ -d ~/bin ] ; then
+if [ -d ~/bin ]; then
     PATH=~/bin:"${PATH}"
 fi
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 eval $(thefuck --alias)
 
-if [ -d $HOME/.anyenv ] ; then
+if [ -d $HOME/.anyenv ]; then
     export PATH="$HOME/.anyenv/bin:$PATH"
     eval "$(anyenv init -)"
+else
+    echo "plz install anyenv. @see https://github.com/riywo/anyenv"
 fi
