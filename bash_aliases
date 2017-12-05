@@ -20,6 +20,7 @@ alias e="emacs"
 alias bye="exit"
 alias quit="exit"
 alias rmds='sudo find /. -name ".DS_Store" -exec rm {} \;'
+alias be="bundle exec"
 
 # git系
 alias gitst="git st"
