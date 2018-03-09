@@ -27,6 +27,28 @@ relink ~/.screenrc     $DIR/screenrc
 relink ~/.emacs.d      $DIR/emacs.d
 
 if [ `uname` == "Darwin" ]; then
-    echo -e "\nINSTALL homebrew"
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    # Homebrew
+    echo ""
+    if [ -f /usr/local/bin/brew ]; then
+        echo "UPDATE Homebrew"
+        brew update
+    else
+        echo "INSTALL Homebrew"
+        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    fi
+    echo "Exec brew bundle"
+    brew tap Homebrew/bundle
+    brew bundle
+
+    # anyenv
+    echo "Using anyenv"
+    if [ ! -d ~/.anyenv ]; then
+        git clone https://github.com/riywo/anyenv ~/.anyenv
+        exec $SHELL -l
+
+        anyenv install goenv
+        anyenv install rbenv
+        anyenv install ndenv
+        anyenv install phpenv
+    fi
 fi
