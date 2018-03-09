@@ -29,20 +29,4 @@ relink ~/.emacs.d      $DIR/emacs.d
 if [ `uname` == "Darwin" ]; then
     echo -e "\nINSTALL homebrew"
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    while read line; do
-        result=`echo ${line} | tr -d "\r" | tr -d "\n"`
-
-        if [ `echo ${result} | egrep "^#" | wc -l` -gt 0 ] || [ "${result}" == "" ]; then
-            continue
-        fi
-
-        if [[ ${result} =~ ^appstore  ]]; then
-            app_name=`echo ${result} | awk '{print $2}'`
-            echo -e "\033[4;31mNotice\033[0;39m: Plz install \033[4;39m${app_name}\033[0;39m for AppStore"
-        else
-            echo "BREW exec ${line}"
-            brew ${line}
-            echo ""
-        fi
-    done < Brewfile
 fi
