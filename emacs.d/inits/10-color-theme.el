@@ -1,3 +1,5 @@
+(load-theme 'madhat2r t)
+
 ;; カラー設定
 (require 'color-theme)
 (defun color-theme-default ()

@@ -6,8 +6,11 @@
 
 ;; パッケージのインストーラーの設定
 (require 'package)
-(add-to-list 'package-archives '("melpa" .     "http://melpa.milkbox.net/packages/"))
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+(setq package-archives
+      '(("gnu" . "http://elpa.gnu.org/packages/")
+        ("melpa" . "http://melpa.org/packages/")
+        ("org" . "http://orgmode.org/elpa/")
+        ("marmalade" . "http://marmalade-repo.org/packages/")))
 (package-initialize)
 
 ;; common-lisp 系の関数設定
@@ -81,7 +84,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (web-beautify sbt-mode ensime google-translate flycheck-pos-tip flycheck typescript-mode coffee-mode web-mode yaml-mode ssh-config-mode smarty-mode scss-mode rainbow-mode popwin php-mode markdown-mode json-mode js2-mode jade-mode google-c-style apache-mode elscreen color-theme auto-highlight-symbol auto-complete init-loader)))
+    (madhat2r-theme color-theme-github color-theme-sanityinc-tomorrow color-theme-ir-black web-beautify sbt-mode ensime google-translate flycheck-pos-tip flycheck typescript-mode coffee-mode web-mode yaml-mode ssh-config-mode smarty-mode scss-mode rainbow-mode popwin php-mode markdown-mode json-mode js2-mode jade-mode google-c-style apache-mode elscreen color-theme auto-highlight-symbol auto-complete init-loader)))
  '(tool-bar-mode nil)
  '(transient-mark-mode t)
  '(vc-handled-backends nil))
