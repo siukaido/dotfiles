@@ -24,6 +24,6 @@ cask 'jasper'
 cask 'google-chrome'
 cask 'quicksilver'
 cask 'postman'
-cask 'vagrant'
-cask 'virtualbox'
+#cask 'vagrant'
+#cask 'virtualbox'
 
