@@ -9,6 +9,7 @@ export PATH=$PATH:~/.aws/AWS-ElasticBeanstalk-CLI-2.6.4/eb/macosx/python2.7/
 export LIBRARY_PATH=/usr/local/include/:${LIBRARY_PATH}
 export HISTTIMEFORMAT="%y/%m/%d %H:%M:%S: "
 export GOPATH="${HOME}/.go"
+export PATH="${GOPATH}/bin":$PATH
 export CONNECTION_REFRESH="true"
 
 # Bash 4.0 の拡張機能

@@ -25,6 +25,7 @@ cask 'google-chrome'
 cask 'quicksilver'
 cask 'postman'
 cask 'fluid'
+cask 'adobe-acrobat-reader'
 #cask 'vagrant'
 #cask 'virtualbox'
 
