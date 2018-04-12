@@ -28,4 +28,4 @@ cask 'fluid'
 cask 'adobe-acrobat-reader'
 #cask 'vagrant'
 #cask 'virtualbox'
-
+cask 'mysqlworkbench'
