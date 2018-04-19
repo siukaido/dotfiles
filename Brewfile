@@ -12,6 +12,7 @@ brew 'tree'
 brew 'dep'
 brew 'ansible'
 brew 'awscli'
+brew 'pre-commit'
 
 tap 'caskroom/cask'
 cask 'goofy'
