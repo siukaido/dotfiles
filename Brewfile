@@ -13,6 +13,8 @@ brew 'dep'
 brew 'ansible'
 brew 'awscli'
 brew 'pre-commit'
+brew 'jq'
+brew 'stern'
 
 tap 'caskroom/cask'
 cask 'goofy'
