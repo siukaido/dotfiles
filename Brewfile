@@ -15,6 +15,7 @@ brew 'awscli'
 brew 'pre-commit'
 brew 'jq'
 brew 'stern'
+brew 'yarn'
 
 tap 'caskroom/cask'
 cask 'goofy'
