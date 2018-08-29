@@ -31,7 +31,6 @@
     jade-mode
     markdown-mode
     php-mode
-    popwin
     rainbow-mode
     scss-mode
     smarty-mode
