@@ -9,8 +9,7 @@
 (setq package-archives
       '(("gnu" . "http://elpa.gnu.org/packages/")
         ("melpa" . "http://melpa.org/packages/")
-        ("org" . "http://orgmode.org/elpa/")
-        ("marmalade" . "http://marmalade-repo.org/packages/")))
+        ("org" . "http://orgmode.org/elpa/")))
 (package-initialize)
 
 ;; common-lisp 系の関数設定

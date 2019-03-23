@@ -26,6 +26,9 @@ relink ~/.inputrc      $DIR/inputrc
 relink ~/.screenrc     $DIR/screenrc
 relink ~/.emacs.d      $DIR/emacs.d
 
+mkdir ~/.bundle
+relink ~/.bundle/config $DIR/bundle/config
+
 if [ `uname` == "Darwin" ]; then
     # Homebrew
     echo ""
@@ -45,6 +48,9 @@ if [ `uname` == "Darwin" ]; then
     if [ ! -d ~/.anyenv ]; then
         git clone https://github.com/riywo/anyenv ~/.anyenv
         exec $SHELL -l
+        # anyenv update
+        mkdir -p $(anyenv root)/plugins
+        git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/any
 
         anyenv install goenv
         anyenv install rbenv
