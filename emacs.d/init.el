@@ -82,7 +82,7 @@
  '(menu-bar-mode nil)
  '(package-selected-packages
    (quote
-    (madhat2r-theme color-theme-github color-theme-sanityinc-tomorrow color-theme-ir-black web-beautify sbt-mode ensime google-translate flycheck-pos-tip flycheck typescript-mode coffee-mode web-mode yaml-mode ssh-config-mode smarty-mode scss-mode rainbow-mode popwin php-mode markdown-mode json-mode js2-mode jade-mode google-c-style apache-mode elscreen color-theme auto-highlight-symbol auto-complete init-loader)))
+    (dart-mode madhat2r-theme color-theme-github color-theme-sanityinc-tomorrow color-theme-ir-black web-beautify sbt-mode ensime google-translate flycheck-pos-tip flycheck typescript-mode coffee-mode web-mode yaml-mode ssh-config-mode smarty-mode scss-mode rainbow-mode popwin php-mode markdown-mode json-mode js2-mode jade-mode google-c-style apache-mode elscreen color-theme auto-highlight-symbol auto-complete init-loader)))
  '(tool-bar-mode nil)
  '(transient-mark-mode t)
  '(vc-handled-backends nil))

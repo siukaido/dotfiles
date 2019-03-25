@@ -10,7 +10,7 @@ export LIBRARY_PATH=/usr/local/include/:${LIBRARY_PATH}
 export HISTTIMEFORMAT="%y/%m/%d %H:%M:%S: "
 export GOPATH="${HOME}/.go"
 export PATH="${GOPATH}/bin":$PATH
-export PATH="${HOME}/Applications/flutter/bin:$PATH"
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export CONNECTION_REFRESH="true"
 
 # Bash 4.0 の拡張機能
