@@ -13,6 +13,9 @@ export PATH="${GOPATH}/bin":$PATH
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export CONNECTION_REFRESH="true"
 
+export GOENV_DISABLE_GOROOT=1
+export GOENV_DISABLE_GOPATH=1
+
 # Bash 4.0 の拡張機能
 shopt -s globstar
 #shopt -s autocd
