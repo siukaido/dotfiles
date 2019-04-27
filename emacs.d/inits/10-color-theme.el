@@ -1,3 +1,4 @@
+(load-theme 'manoj-dark t)
 (load-theme 'madhat2r t)
 
 ;; カラー設定

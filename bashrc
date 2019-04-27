@@ -5,12 +5,13 @@ export EDITOR=/usr/bin/emacs
 export PATH=/usr/local/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/sbin:/bin
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
-export PATH=$PATH:~/.aws/AWS-ElasticBeanstalk-CLI-2.6.4/eb/macosx/python2.7/
 export LIBRARY_PATH=/usr/local/include/:${LIBRARY_PATH}
 export HISTTIMEFORMAT="%y/%m/%d %H:%M:%S: "
 export GOPATH="${HOME}/.go"
 export PATH="${GOPATH}/bin":$PATH
-export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+if [ -d "/usr/local/opt/imagemagick@6/bin" ]; then
+    export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+fi
 export CONNECTION_REFRESH="true"
 
 export GOENV_DISABLE_GOROOT=1

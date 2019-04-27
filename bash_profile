@@ -57,3 +57,4 @@ fi
 if [ -f "${HOME}/Applications/google-cloud-sdk/completion.bash.inc" ]; then
    source "${HOME}/Applications/google-cloud-sdk/completion.bash.inc"
 fi
+alias brew="env PATH=${PATH/\/Users\/siukaido\/.anyenv\/envs\/phpen\v/shims:/} brew"
