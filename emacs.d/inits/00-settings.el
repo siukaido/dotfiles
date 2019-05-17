@@ -9,15 +9,7 @@
  '(column-number-mode t)      ;; 行数表示
  '(line-number-mode t);; カーソルの位置が何行目かを表示する
  '(inhibit-startup-message t) ;; スタートアップメッセージを表示しない
- '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages))
- '(google-translate-default-source-language "en")
- '(google-translate-default-target-language "ja")
- '(js-indent-level 2)
- '(markdown-command "mdown")
-; '(package-selected-packages
-;   (quote
-;    (dart-mode madhat2r-theme color-theme-github color-theme-sanityinc-tomorrow color-theme-ir-black web-beautify sbt-mode ensime google-translate flycheck-pos-tip flycheck typescript-mode coffee-mode web-mode yaml-mode ssh-config-mode smarty-mode scss-mode rainbow-mode popwin php-mode markdown-mode json-mode js2-mode jade-mode google-c-style apache-mode elscreen color-theme auto-highlight-symbol auto-complete init-loader)))
- '(vc-handled-backends nil))
+ )
 
 ;; shift + 矢印で分割ウィンドウ間を移動
 (windmove-default-keybindings)
