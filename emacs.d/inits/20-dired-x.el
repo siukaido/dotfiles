@@ -1,10 +1,10 @@
-(require 'dired-x)
+(use-package dired-x)
 (add-hook 'dired-load-hook
    (function (lambda () (load "dired-x"))))
 (setq dired-listing-switches "-al --g")
 
 ;; 一度に複数のファイルcoding systemを変換する
-(require 'dired-aux)
+(use-package dired-aux)
 (add-hook 'dired-mode-hook
           (lambda ()
             (define-key (current-local-map) "T"

@@ -1,5 +1,5 @@
 (defalias 'perl-mode 'cperl-mode)
-(require  'cperl-mode)
+(use-package cperl-mode)
 
 (setq cperl-indent-level 4
       cperl-close-paren-offset -4

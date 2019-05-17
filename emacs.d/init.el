@@ -6,11 +6,13 @@
 
 ;; パッケージのインストーラーの設定
 (require 'package)
-(setq package-archives
-      '(("gnu" . "http://elpa.gnu.org/packages/")
-        ("melpa" . "http://melpa.org/packages/")
-        ("org" . "http://orgmode.org/elpa/")))
+(add-to-list 'package-archives '("gnu". "http://elpa.gnu.org/packages/") t)
+(add-to-list 'package-archives '("melpa". "http://melpa.org/packages/") t)
+(add-to-list 'package-archives '("org". "http://orgmode.org/elpa/") t)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
+;;;; パッケージ情報の更新
+;(package-refresh-contents)
 
 ;; common-lisp 系の関数設定
 (require 'cl)
@@ -18,77 +20,47 @@
 ;; 必要パッケージのリスト
 (defvar installing-package-list
   '(
+    ;; 00：基本設定
     init-loader
-    ;; 10
-    auto-complete
+    exec-path-from-shell
+    use-package
+    ;; 10：見た目
     auto-highlight-symbol
     color-theme
+    atom-dark-theme
+    ;; 20：utinitly
+    auto-complete
+    company
     elscreen
-    ;; 20
-    apache-mode
-    google-c-style
-    jade-mode
-    markdown-mode
-    php-mode
-    rainbow-mode
-    scss-mode
-    smarty-mode
-    ssh-config-mode
-    yaml-mode
-    web-mode
-    coffee-mode
-    typescript-mode
-    ruby-mode
-    slim-mode
-    rjsx-mode
-    ;; 30
-    flyspell
     flycheck
     flycheck-pos-tip
-    google-translate
-    ;; 40
-    ensime
-    sbt-mode
-    ;; others
-    web-beautify
+    ;; 30：サーバサイドmode
+    apache-mode
+    eglot
     go-mode
+    php-mode
+    ruby-mode
+    slim-mode
+    smarty-mode
+    ;; 40：フロントエンドmode
+    jade-mode
+    rainbow-mode
+    rjsx-mode
+    scss-mode
+    typescript-mode
+    web-mode
+    ;; 50：その他mode
+    google-c-style
+    markdown-mode
+    ssh-config-mode
+    yaml-mode
     ))
-
 ;; 自動インストール設定
-(let ((not-installed (loop for x in installing-package-list
-                            when (not (package-installed-p x))
-                            collect x)))
-  (when not-installed
-    (package-refresh-contents)
-    (dolist (pkg not-installed)
-        (package-install pkg))))
+(dolist (package installing-package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
 
 ;; 各々の設定ファイルのロード
-(require 'init-loader)
+(use-package init-loader)
 (setq init-loader-show-log-after-init nil)
 (init-loader-load "~/.emacs.d/inits")
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(display-time-mode t)
- '(flycheck-display-errors-function (function flycheck-pos-tip-error-messages))
- '(google-translate-default-source-language "en")
- '(google-translate-default-target-language "ja")
- '(js-indent-level 2)
- '(markdown-command "mdown")
- '(menu-bar-mode nil)
- '(package-selected-packages
-   (quote
-    (dart-mode madhat2r-theme color-theme-github color-theme-sanityinc-tomorrow color-theme-ir-black web-beautify sbt-mode ensime google-translate flycheck-pos-tip flycheck typescript-mode coffee-mode web-mode yaml-mode ssh-config-mode smarty-mode scss-mode rainbow-mode popwin php-mode markdown-mode json-mode js2-mode jade-mode google-c-style apache-mode elscreen color-theme auto-highlight-symbol auto-complete init-loader)))
- '(tool-bar-mode nil)
- '(transient-mark-mode t)
- '(vc-handled-backends nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )

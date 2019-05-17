@@ -1,4 +1,4 @@
-(require 'google-c-style)
+(use-package google-c-style)
 (setq auto-mode-alist
       (append '(("\\.h\\(\\..+\\)?$" . c++-mode))
               auto-mode-alist))
