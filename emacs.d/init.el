@@ -30,12 +30,12 @@
     atom-dark-theme
     ;; 20：utinitly
     company
+    eglot
     elscreen
     flycheck
     flycheck-pos-tip
     ;; 30：サーバサイドmode
     apache-mode
-    eglot
     go-mode
     php-mode
     ruby-mode
@@ -63,3 +63,27 @@
 (use-package init-loader)
 (setq init-loader-show-log-after-init nil)
 (init-loader-load "~/.emacs.d/inits")
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(column-number-mode t)
+ '(display-time-mode t)
+ '(indent-tabs-mode nil)
+ '(inhibit-startup-screen t)
+ '(line-number-mode t)
+ '(markdown-command "mdown")
+ '(menu-bar-mode nil)
+ '(package-selected-packages
+   (quote
+    (yaml-mode ssh-config-mode markdown-mode google-c-style web-mode typescript-mode scss-mode rjsx-mode rainbow-mode jade-mode smarty-mode slim-mode php-mode go-mode eglot apache-mode flycheck-pos-tip flycheck elscreen company atom-dark-theme color-theme auto-highlight-symbol use-package exec-path-from-shell init-loader)))
+ '(toggle-scroll-bar nil)
+ '(tool-bar-mode nil)
+ '(transient-mark-mode t))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
