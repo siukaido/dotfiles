@@ -29,7 +29,6 @@
     color-theme
     atom-dark-theme
     ;; 20：utinitly
-    auto-complete
     company
     elscreen
     flycheck
