@@ -1,7 +1,6 @@
 ;;;; 基本情報
 
 (custom-set-variables
- '(display-time-mode t)       ;; 時間を表示
  '(tool-bar-mode nil)         ;; ツールバーを非表示
  '(menu-bar-mode nil)         ;; メニューバーを非表示
  '(toggle-scroll-bar nil)     ;; スクロールバーを非表示
