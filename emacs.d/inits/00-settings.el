@@ -74,4 +74,4 @@
   (run-with-idle-timer 0.2 nil #'linum-update-current))
 
 ;; シェルに設定されている環境変数を引き継ぐ
-(exec-path-from-shell-initialize)
+;(exec-path-from-shell-initialize)
