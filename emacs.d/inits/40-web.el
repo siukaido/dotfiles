@@ -1,4 +1,10 @@
-(use-package web-mode)
+(use-package web-mode
+  :init
+  (add-hook 'web-mode-hook (lambda()
+                             (setq indent-tabs-mode nil)
+                             (setq tab-width 2)
+                             ))
+  )
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
