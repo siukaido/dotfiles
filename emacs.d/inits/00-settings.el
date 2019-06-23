@@ -1,16 +1,19 @@
 ;;;; 基本情報
-;; メニューバーを表示しない
-(menu-bar-mode 0)
-;; 時間を表示する
-(display-time)
+
+(custom-set-variables
+ '(tool-bar-mode nil)         ;; ツールバーを非表示
+ '(menu-bar-mode nil)         ;; メニューバーを非表示
+ '(toggle-scroll-bar nil)     ;; スクロールバーを非表示
+ '(transient-mark-mode t)     ;; 選択領域をハイライト
+ '(column-number-mode t)      ;; 行数表示
+ '(line-number-mode t);; カーソルの位置が何行目かを表示する
+ '(inhibit-startup-message t) ;; スタートアップメッセージを表示しない
+ )
+
 ;; shift + 矢印で分割ウィンドウ間を移動
 (windmove-default-keybindings)
 ;; バックアップはしない
 (setq make-backup-files nil)
-;; スタートアップメッセージを表示しない
-(setq inhibit-startup-message t)
-;; 行数表示
-(column-number-mode t)
 ;; 圧縮ファイルの閲覧可能にする
 (auto-compression-mode 1)
 ;; 文字の折り返し
@@ -26,9 +29,6 @@
   (interactive)
   (indent-according-to-mode)
   (next-line 1))
-;; 行末の空白を強調表示
-(setq-default show-trailing-whitespace t)
-(set-face-background 'trailing-whitespace "#b14770")
 
 ;; create backup file in ~/.emacs.d/backup
 (setq make-backup-files t)
@@ -43,11 +43,6 @@
 ;; コメントアウトの形式変更
 (setq comment-style 'multi-line)
 
-;; 改行コードを表示
-(setq eol-mnemonic-dos  "(CRLF)")
-(setq eol-mnemonic-mac  "(CR)")
-(setq eol-mnemonic-unix "(LF)")
-
 ;; ミニバッファ:単語単位での削除操作
 (define-key minibuffer-local-completion-map "\C-w" 'backward-kill-word)
 
@@ -60,15 +55,6 @@
 ;; スクロール時の移動量を1に
 (setq scroll-step 1)
 
-;; モードラインに列番号表示
-(column-number-mode t)
-
-;; カーソルの位置が何文字目かを表示する
-(column-number-mode t)
-
-;; カーソルの位置が何行目かを表示する
-(line-number-mode t)
-
 ;; 対応する括弧をハイライト
 (setq show-paren-delay 0)
 (show-paren-mode t)
@@ -79,10 +65,6 @@
 ;; Emacs の質問を y/n に
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; 補完時に大文字小文字を区別しない
-(setq completion-ignore-case t)
-(setq read-file-name-completion-ignore-case t)
-
 ;; シンボリックリンクを開くときの質問省略
 (setq vc-follow-symlinks t)
 
@@ -90,3 +72,6 @@
 (setq linum-delay t)
 (defadvice linum-schedule (around my-linum-schedule () activate)
   (run-with-idle-timer 0.2 nil #'linum-update-current))
+
+;; シェルに設定されている環境変数を引き継ぐ
+;(exec-path-from-shell-initialize)

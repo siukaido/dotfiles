@@ -1,4 +1,4 @@
-(require 'elscreen)
+(use-package elscreen)
 
 (elscreen-start)
 (setq elscreen-prefix-key "\C-z")
