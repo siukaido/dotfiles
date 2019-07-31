@@ -15,7 +15,7 @@
 (add-to-list 'auto-mode-alist '("\\.html\\'". web-mode))
 (defun web-mode-hook ()
   "Hooks for Web mode."
-  (setq web-mode-markup-indent-offset   4))
+  (setq web-mode-markup-indent-offset   2))
 (add-hook 'web-mode-hook 'web-mode-hook)
 (set-face-attribute 'web-mode-html-tag-bracket-face nil :foreground "white")
 (set-face-attribute 'web-mode-html-tag-face nil :foreground "LightSteelBlue")

@@ -53,6 +53,7 @@
     markdown-mode
     ssh-config-mode
     yaml-mode
+    terraform-mode
     ))
 ;; 自動インストール設定
 (dolist (package installing-package-list)
@@ -69,6 +70,13 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
+ '(company-auto-expand t)
+ '(company-dabbrev-downcase nil)
+ '(company-idle-delay 0)
+ '(company-minimum-prefix-length 2)
+ '(company-selection-wrap-around t)
+ '(company-transformers (quote (company-sort-by-backend-importance)))
+ '(completion-ignore-case t t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(line-number-mode t)
