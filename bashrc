@@ -1,17 +1,13 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 [ -z "$PS1" ] && return
 shopt -s checkwinsize
-export EDITOR=/usr/bin/emacs
-export PATH=/usr/local/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/sbin:/bin
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
-export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/usr/bin
+export EDITOR=/usr/local/bin/emacs
+export GOPATH="${HOME}/.go"
+export XCODE_BIN_PATH=/Applications/Xcode.app/Contents/Developer/usr/bin
+export GNUBIN_PATH=/usr/local/opt/coreutils/libexec/gnubin
+export PATH=$GNUBIN_PATH:/usr/local/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/sbin:/bin:"${GOPATH}/bin":$XCODE_BIN_PATH:$PATH
 export LIBRARY_PATH=/usr/local/include/:${LIBRARY_PATH}
 export HISTTIMEFORMAT="%y/%m/%d %H:%M:%S: "
-export GOPATH="${HOME}/.go"
-export PATH="${GOPATH}/bin":$PATH
-if [ -d "/usr/local/opt/imagemagick@6/bin" ]; then
-    export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
-fi
 export CONNECTION_REFRESH="true"
 
 export GOENV_DISABLE_GOROOT=1
