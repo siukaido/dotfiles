@@ -1,3 +1,4 @@
+(add-to-list 'auto-mode-alist '(".*\\.json\\'" . json-mode))
 (add-hook 'json-mode-hook
   (lambda ()
     (setq json-reformat:indent-width 2)

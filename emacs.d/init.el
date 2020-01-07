@@ -54,6 +54,7 @@
     ssh-config-mode
     yaml-mode
     terraform-mode
+    json-mode
     ))
 ;; 自動インストール設定
 (dolist (package installing-package-list)
