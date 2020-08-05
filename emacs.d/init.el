@@ -48,6 +48,7 @@
     scss-mode
     typescript-mode
     web-mode
+    tide
     ;; 50：その他mode
     google-c-style
     markdown-mode
