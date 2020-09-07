@@ -1,19 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 [ -z "$PS1" ] && return
 shopt -s checkwinsize
-export EDITOR=/usr/local/bin/emacs
-export GOPATH="${HOME}/.go"
-export XCODE_BIN_PATH=/Applications/Xcode.app/Contents/Developer/usr/bin
-export GNUBIN_PATH=/usr/local/opt/coreutils/libexec/gnubin
-export PATH=$GNUBIN_PATH:/usr/local/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/sbin:/bin:"${GOPATH}/bin":$XCODE_BIN_PATH:$PATH
-export LIBRARY_PATH=/usr/local/include/:${LIBRARY_PATH}
-export HISTTIMEFORMAT="%y/%m/%d %H:%M:%S: "
-export CONNECTION_REFRESH="true"
-
-export GOENV_DISABLE_GOROOT=1
-export GOENV_DISABLE_GOPATH=1
-
-# Bash 4.0 の拡張機能
 shopt -s globstar
 #shopt -s autocd
 shopt -s dirspell
@@ -26,11 +13,6 @@ function share_history {
 }
 PROMPT_COMMAND='share_history'
 shopt -u histappend
-export HISTSIZE=300000
-
-# 日本語設定
-export LANG=ja_JP.UTF-8
-export LC_AL=ja_JP.UTF-8
 
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
@@ -43,7 +25,7 @@ if [ -z "$debian_chroot" -a -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-# vagrant completion
+# xxx_completion
 if [ -f "/usr/local/opt/bash-git-prompt/share/gitprompt.sh" ]; then
   __GIT_PROMPT_DIR="/usr/local/opt/bash-git-prompt/share"
   source "/usr/local/opt/bash-git-prompt/share/gitprompt.sh"
@@ -66,13 +48,9 @@ xterm-color)
     ;;
 esac
 
-# ファーストログインはscreenを自動起動
-# if [ `ps aux | grep "$USER" | grep screen | grep -v Xvfb | wc -l` -le 1 ];
-# then
-#    if [ -e /var/run/screen/S-"$USER"/* ];
-#    then
-#        screen -r
-#    else
-#        screen
-#    fi
-# fi
+# thefuck
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+eval $(thefuck --alias)
+
+# direnv
+eval "$(direnv hook bash)"

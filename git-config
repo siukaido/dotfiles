@@ -16,3 +16,5 @@
     ui = auto
 [core]
     pager = diff-so-fancy | less --tabs=4 -RFX
+[pull]
+	rebase = false

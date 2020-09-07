@@ -21,6 +21,7 @@ alias bye="exit"
 alias quit="exit"
 alias rmds='sudo find /. -name ".DS_Store" -exec rm {} \;'
 alias be="bundle exec"
+alias brew="PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin brew"
 
 # git系
 alias gitst="git st"

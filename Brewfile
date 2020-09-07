@@ -19,7 +19,6 @@ brew 'yarn'
 
 tap 'caskroom/cask'
 cask 'goofy'
-cask '1password'
 cask 'appcleaner'
 cask 'dropbox'
 cask 'iterm2'

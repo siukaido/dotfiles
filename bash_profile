@@ -1,18 +1,45 @@
-# set ssh-agent
-# agentPID=`ps gxww|grep "ssh-agent]*$"|awk '{print $1}'`
-# agentSOCK=`/bin/ls -t /tmp/ssh*/agent*|head -1`
-# if [ "$agentPID" = "" -o "$agentSOCK" = "" ]; then
-#     unset SSH_AUTH_SOCK SSH_AGENT_PID
-#     eval `ssh-agent`
-#     ssh-add < /dev/null
-# else
-#     export SSH_AGENT_PID=$agentPID
-#     export SSH_AUTH_SOCK=$agentSOCK
-#     SSHADD=`ssh-add -l`
-#     if [ "$SSHADD" = "" ]; then
-#         ssh-add < /dev/null
-#     fi
-# fi
+# 日本語設定
+export LANG=ja_JP.UTF-8
+export LC_AL=ja_JP.UTF-8
+
+# エディタ設定
+export EDITOR=/usr/local/bin/emacs
+
+# コマンド履歴設定
+export HISTTIMEFORMAT="%y/%m/%d %H:%M:%S: "
+export HISTSIZE=300000
+export CONNECTION_REFRESH="true"
+
+# go設定
+export GOPATH="${HOME}/.go"
+export GOENV_DISABLE_GOROOT=1
+export GOENV_DISABLE_GOPATH=1
+
+# PATH設定
+## /usr/local/sbin を追加したいため上書き
+PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
+GNUBIN_PATH="/usr/local/opt/coreutils/libexec/gnubin"
+LOCAL_BIN_PATH="${HOME}/bin"
+XCODE_BIN_PATH="/Applications/Xcode.app/Contents/Developer/usr/bin"
+GO_BIN_PATH="${GOPATH}/bin"
+export PATH="${GNUBIN_PATH}:${LOCAL_BIN_PATH}:${PATH}:/usr/loca/sbin:${XCODE_BIN_PATH}:${GO_BIN_PATH}"
+if [ -d $HOME/.anyenv ]; then
+    eval "$(anyenv init -)"
+else
+    echo "plz install anyenv. @see https://github.com/riywo/anyenv"
+fi
+if [ -d $HOME/Applications/flutter ]; then
+   export PATH="${PATH}:${HOME}/Applications/flutter/bin"
+fi
+if [ -f "${HOME}/Applications/google-cloud-sdk/path.bash.inc" ]; then
+   source "${HOME}/Applications/google-cloud-sdk/path.bash.inc"
+fi
+if [ -f "${HOME}/Applications/google-cloud-sdk/completion.bash.inc" ]; then
+   source "${HOME}/Applications/google-cloud-sdk/completion.bash.inc"
+fi
+
+# LIBRARY_PATH設定
+export LIBRARY_PATH=/usr/local/include/:${LIBRARY_PATH}
 
 # include .bashrc if it exists
 if [ -f ~/.bashrc ]; then
@@ -26,35 +53,3 @@ fi
 if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
-
-# set PATH so it includes user's private bin if it exists
-if [ -d ~/bin ]; then
-    PATH=~/bin:"${PATH}"
-fi
-
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-eval $(thefuck --alias)
-
-eval "$(direnv hook bash)"
-
-if [ -d $HOME/.anyenv ]; then
-    export PATH="$HOME/.anyenv/bin:$PATH"
-    eval "$(anyenv init -)"
-else
-    echo "plz install anyenv. @see https://github.com/riywo/anyenv"
-fi
-
-if [ -d $HOME/Applications/flutter ]; then
-   export PATH="${HOME}/Applications/flutter/bin:${PATH}"
-fi
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "${HOME}/Applications/google-cloud-sdk/path.bash.inc" ]; then
-   source "${HOME}/Applications/google-cloud-sdk/path.bash.inc"
-fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "${HOME}/Applications/google-cloud-sdk/completion.bash.inc" ]; then
-   source "${HOME}/Applications/google-cloud-sdk/completion.bash.inc"
-fi
-alias brew="env PATH=${PATH/\/Users\/siukaido\/.anyenv\/envs\/phpen\v/shims:/} brew"
