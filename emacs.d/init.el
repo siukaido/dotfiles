@@ -12,59 +12,81 @@
                        ("melpa" . "https://melpa.org/packages/")
                        ("gnu"   . "https://elpa.gnu.org/packages/")))
   (package-initialize)
-  (package-refresh-contents)
+  (unless (package-installed-p 'leaf)
+    (package-refresh-contents)
+    (package-install 'leaf))
 
-  ;; common-lisp 系の関数設定
-  (require 'cl)
+  (leaf leaf-keywords
+    :ensure t
+    :init
+    (leaf hydra :ensure t)
+    (leaf el-get :ensure t)
+    (leaf blackout :ensure t)
+    :config
+    (leaf-keywords-init)))
 
-  ;; 必要パッケージのリスト
-  (defvar installing-package-list
-    '(
-      ;; 00：基本設定
-      init-loader
-      exec-path-from-shell
-      use-package
-      ;; 10：見た目
-      auto-highlight-symbol
-      color-theme
-      atom-dark-theme
-      ;; 20：utinitly
-      company
-      eglot
-      flycheck
-      flycheck-pos-tip
-      ;; 30：サーバサイドmode
-      apache-mode
-      go-mode
-      php-mode
-      ruby-mode
-      slim-mode
-      smarty-mode
-      ;; 40：フロントエンドmode
-      jade-mode
-      rainbow-mode
-      rjsx-mode
-      scss-mode
-      typescript-mode
-      web-mode
-      tide
-      ;; 50：その他mode
-      google-c-style
-      markdown-mode
-      ssh-config-mode
-      yaml-mode
-      terraform-mode
-      json-mode
-      ))
-  ;; 自動インストール設定
-  (dolist (package installing-package-list)
-    (unless (package-installed-p package)
-      (package-install package)))
+(leaf leaf
+  :config
+  (leaf leaf-convert :ensure t)
+  (leaf leaf-tree
+    :ensure t
+    :custom ((imenu-list-size . 30)
+             (imenu-list-position . 'left))))
 
-  ;; 各々の設定ファイルのロード
-  (use-package init-loader)
-  (setq init-loader-show-log-after-init nil)
-  (init-loader-load "~/.emacs.d/inits"))
+(leaf macrostep
+  :ensure t
+  :bind (("C-c e" . macrostep-expand)))
+
+;; common-lisp 系の関数設定
+(require 'cl)
+
+;; 必要パッケージのリスト
+(defvar installing-package-list
+  '(
+    ;; 00：基本設定
+    init-loader
+    exec-path-from-shell
+    use-package
+    ;; 10：見た目
+    auto-highlight-symbol
+    color-theme
+    atom-dark-theme
+    ;; 20：utinitly
+    company
+    eglot
+    flycheck
+    flycheck-pos-tip
+    ;; 30：サーバサイドmode
+    apache-mode
+    go-mode
+    php-mode
+    ruby-mode
+    slim-mode
+    smarty-mode
+    ;; 40：フロントエンドmode
+    jade-mode
+    rainbow-mode
+    rjsx-mode
+    scss-mode
+    typescript-mode
+    web-mode
+    tide
+    ;; 50：その他mode
+    markdown-mode
+    ssh-config-mode
+    yaml-mode
+    terraform-mode
+    json-mode
+    ))
+;; 自動インストール設定
+(dolist (package installing-package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
+;; 各々の設定ファイルのロード
+(use-package init-loader)
+(setq init-loader-show-log-after-init nil)
+(init-loader-load "~/.emacs.d/inits")
 
 ;;--------------------------------------------------------------------
 ;; 以降は自動で追記される
