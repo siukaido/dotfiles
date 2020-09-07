@@ -8,6 +8,9 @@
  '(column-number-mode t)      ;; 行数表示
  '(line-number-mode t);; カーソルの位置が何行目かを表示する
  '(inhibit-startup-message t) ;; スタートアップメッセージを表示しない
+ '(completion-ignore-case t t) ;; 補完時に大文字/小文字を区別しない
+ '(read-file-name-completion-ignore-case t)
+ '(indent-tabs-mode nil)
  )
 
 ;; shift + 矢印で分割ウィンドウ間を移動
@@ -19,12 +22,8 @@
 ;; 文字の折り返し
 (setq truncate-lines t)
 (setq truncate-partial-width-windows t)
-;; 補完時に大文字/小文字を区別しない
-(setq completion-ignore-case t)
-(setq read-file-name-completion-ignore-case t)
 ;; インデント設定
 (setq default-tab-width 4)
-(setq-default indent-tabs-mode nil)
 (defun indent-and-next-line ()
   (interactive)
   (indent-according-to-mode)

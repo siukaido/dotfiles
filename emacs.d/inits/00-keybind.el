@@ -16,3 +16,11 @@
 (global-set-key "\C-x\C-r" 'point-to-register)
 (global-set-key "\C-x\C-j" 'jump-to-register)
 (global-unset-key "\C-z")
+
+;; tab-bar-mode
+(global-set-key "\C-z\C-c" 'tab-bar-new-tab)
+(global-set-key "\C-zc" 'tab-bar-new-tab)
+(global-set-key "\C-z\C-k" 'tab-bar-close-tab)
+(global-set-key "\C-zk" 'tab-bar-close-tab)
+(global-set-key "\C-z\C-p" 'tab-previous)
+(global-set-key "\C-z\C-n" 'tab-next)
