@@ -133,9 +133,9 @@
                (tab-bar-close-button . nil)
                )
       :custom-face
-      (tab-bar . '((t (:background "gray85"))))
-      (tab-bar-tab . '((t (:background "black" :weight bold))))
-      (tab-bar-tab-inactive . '((t (:foreground "gray40"))))
+      (tab-bar . '((t (:background "Gray50"))))
+      (tab-bar-tab . '((t (:background "white" :foreground "black" :underline t))))
+      (tab-bar-tab-inactive . '((t (:background "Gray50"))))
       )))
 
 ;; 必要パッケージのリスト
@@ -201,10 +201,11 @@
  '(company-transformers '(company-sort-by-backend-importance))
  '(completion-ignore-case t t)
  '(default-tab-width 4 t)
- '(imenu-list-position 'left)
- '(imenu-list-size 30)
+ '(imenu-list-position 'left t)
+ '(imenu-list-size 30 t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-message t)
+ '(inhibit-startup-screen t)
  '(line-number-mode t)
  '(linum-delay t t)
  '(make-backup-files nil)
@@ -219,6 +220,8 @@
  '(read-file-name-completion-ignore-case t)
  '(scroll-step 1)
  '(show-paren-delay 0)
+ '(tab-bar-close-button nil t)
+ '(tab-bar-show t)
  '(toggle-scroll-bar nil t)
  '(tool-bar-mode nil)
  '(transient-mark-mode t)
@@ -230,4 +233,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(tab-bar ((t (:background "Gray50"))) nil "Customized with leaf in tab-bar-mode block")
+ '(tab-bar-tab ((t (:background "white" :foreground "black" :underline t))) nil "Customized with leaf in tab-bar-mode block")
+ '(tab-bar-tab-inactive ((t (:background "Gray50"))) nil "Customized with leaf in tab-bar-mode block"))
