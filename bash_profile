@@ -53,3 +53,9 @@ fi
 if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/hideharu.saito/Applications/google-cloud-sdk/path.bash.inc' ]; then . '/Users/hideharu.saito/Applications/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/hideharu.saito/Applications/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/hideharu.saito/Applications/google-cloud-sdk/completion.bash.inc'; fi
