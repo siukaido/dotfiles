@@ -58,6 +58,7 @@ brew "weaveworks/tap/eksctl"
 cask 'adobe-acrobat-reader'
 cask 'appcleaner'
 cask 'coteditor'
+cask 'choosy'
 cask 'discord'
 cask 'dropbox'
 cask 'fluid'
