@@ -34,6 +34,7 @@ brew "imagemagick@6", link: true
 brew "ios-deploy"
 brew "jq"
 brew "kubernetes-cli"
+brew "kustomize"
 brew "lv"
 brew "mysql"
 brew "nginx"
