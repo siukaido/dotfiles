@@ -45,7 +45,6 @@ brew "prettier"
 brew "pwgen"
 brew "python@3.8"
 brew "redis"
-brew "ruby-build", args: ["HEAD"]
 brew "sl"
 brew "stern"
 brew "thefuck"
