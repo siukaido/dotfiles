@@ -2,6 +2,7 @@
   :config
   ;; 利用するモード
   ;;;; 30
+  (add-hook 'dart-mode-hook 'flycheck-mode)
   (add-hook 'go-mode-hook    'flycheck-mode)
   (add-hook 'perl-mode-hook  'flycheck-mode)
   (add-hook 'php-mode-hook   'flycheck-mode)
