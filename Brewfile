@@ -36,8 +36,8 @@ brew "jq"
 brew "kubernetes-cli"
 brew "kustomize"
 brew "lv"
-brew "mysql"
-brew "mysql@5.6"
+brew "mysql", link: false
+brew "mysql@5.6", link: true
 brew "mysql@5.7"
 brew "nginx"
 brew "nkf"
@@ -47,7 +47,7 @@ brew "prettier"
 brew "pwgen"
 brew "python@3.8"
 brew "redis"
-#brew "ruby-build", args: ["HEAD"]
+brew "ruby-build", args: ["HEAD"]
 brew "sl"
 brew "stern"
 brew "thefuck"
