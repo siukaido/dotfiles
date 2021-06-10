@@ -36,7 +36,8 @@ brew "jq"
 brew "kubernetes-cli"
 brew "kustomize"
 brew "lv"
-brew "mysql"
+brew "mysql", link: false
+brew "mysql@5.6", link: true
 brew "nginx"
 brew "nkf"
 brew "nmap"
