@@ -152,12 +152,14 @@
     atom-dark-theme
     ;; 20：utinitly
     company
+    company-go
     eglot
     flycheck
     flycheck-pos-tip
     ;; 30：サーバサイドmode
     apache-mode
-    ;go-mode
+    dart-mode
+    go-mode
     ruby-mode
     ;; 40：フロントエンドmode
     jade-mode
@@ -202,8 +204,8 @@
  '(company-transformers '(company-sort-by-backend-importance))
  '(completion-ignore-case t t)
  '(default-tab-width 4 t)
- '(imenu-list-position 'left t)
- '(imenu-list-size 30 t)
+ '(imenu-list-position 'left)
+ '(imenu-list-size 30)
  '(indent-tabs-mode nil)
  '(inhibit-startup-message t)
  '(inhibit-startup-screen t)
@@ -215,9 +217,10 @@
  '(package-archives
    '(("org" . "https://orgmode.org/elpa/")
      ("melpa" . "https://melpa.org/packages/")
-     ("gnu" . "https://elpa.gnu.org/packages/")))
+     ("gnu" . "https://elpa.gnu.org/packages/")
+     ("melpa-stable" . "https://stable.melpa.org/packages/")))
  '(package-selected-packages
-   '(go-mode json-mode terraform-mode yaml-mode ssh-config-mode markdown-mode tide web-mode typescript-mode scss-mode rjsx-mode rainbow-mode jade-mode apache-mode flycheck-pos-tip flycheck eglot company atom-dark-theme color-theme auto-highlight-symbol use-package exec-path-from-shell init-loader macrostep leaf-tree leaf-convert blackout el-get hydra leaf-keywords leaf))
+   '(json-mode terraform-mode yaml-mode ssh-config-mode markdown-mode tide web-mode typescript-mode scss-mode rjsx-mode rainbow-mode jade-mode go-mode dart-mode apache-mode flycheck-pos-tip flycheck eglot company atom-dark-theme color-theme auto-highlight-symbol use-package exec-path-from-shell init-loader macrostep leaf-tree leaf-convert blackout el-get hydra leaf-keywords leaf))
  '(read-file-name-completion-ignore-case t)
  '(scroll-step 1)
  '(show-paren-delay 0)
