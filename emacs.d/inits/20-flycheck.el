@@ -1,3 +1,6 @@
+;;--------------------------------------------------------------------
+;; syntax checkするパッケージ
+;;--------------------------------------------------------------------
 (use-package flycheck
   :config
   ;; 利用するモード
@@ -16,3 +19,10 @@
   (add-hook 'json-mode-hook  'flycheck-mode)
   (add-hook 'yaml-mode-hook  'flycheck-mode)
   )
+
+;;--------------------------------------------------------------------
+;; https://github.com/flycheck/flycheck-pos-tip
+;; エラー内容をその場にツールチップで表示するためのパッケージ
+;;--------------------------------------------------------------------
+(with-eval-after-load 'flycheck
+  (flycheck-pos-tip-mode))
