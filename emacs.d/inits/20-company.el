@@ -9,6 +9,7 @@
    '(company-selection-wrap-around t)
    '(completion-ignore-case t)
    '(company-dabbrev-downcase nil)
+   '(company-go-insert-arguments nil)
    )
   (define-key company-active-map (kbd "M-n") nil)
   (define-key company-active-map (kbd "M-p") nil)
