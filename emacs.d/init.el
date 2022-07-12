@@ -170,6 +170,7 @@
     typescript-mode
     web-mode
     tide
+    vue-mode
     ;; 50：その他mode
     markdown-mode
     ssh-config-mode
@@ -221,7 +222,7 @@
      ("gnu" . "https://elpa.gnu.org/packages/")
      ("melpa-stable" . "https://stable.melpa.org/packages/")))
  '(package-selected-packages
-   '(json-mode terraform-mode yaml-mode ssh-config-mode markdown-mode tide web-mode typescript-mode scss-mode rjsx-mode rainbow-mode jade-mode go-mode dart-mode apache-mode flycheck-pos-tip flycheck eglot company atom-dark-theme color-theme auto-highlight-symbol use-package exec-path-from-shell init-loader macrostep leaf-tree leaf-convert blackout el-get hydra leaf-keywords leaf))
+   '(vue-mode json-mode terraform-mode yaml-mode ssh-config-mode markdown-mode tide web-mode typescript-mode scss-mode rjsx-mode rainbow-mode jade-mode go-mode dart-mode apache-mode flycheck-pos-tip flycheck eglot company atom-dark-theme color-theme auto-highlight-symbol use-package exec-path-from-shell init-loader macrostep leaf-tree leaf-convert blackout el-get hydra leaf-keywords leaf))
  '(read-file-name-completion-ignore-case t)
  '(scroll-step 1)
  '(show-paren-delay 0)

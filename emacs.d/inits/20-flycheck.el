@@ -15,6 +15,7 @@
   (add-hook 'scss-mode-hook  'flycheck-mode)
   (flycheck-add-mode 'javascript-eslint 'web-mode)
   (flycheck-add-mode 'typescript-tslint 'web-mode)
+  (flycheck-add-mode 'javascript-eslint 'vue-mode)
   ;;;; 50
   (add-hook 'json-mode-hook  'flycheck-mode)
   (add-hook 'yaml-mode-hook  'flycheck-mode)
