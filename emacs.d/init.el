@@ -160,6 +160,7 @@
     apache-mode
     dart-mode
     go-mode
+    go-eldoc
     ruby-mode
     ;; 40：フロントエンドmode
     jade-mode
@@ -198,16 +199,16 @@
  '(comment-style 'multi-line)
  '(company-auto-expand t)
  '(company-dabbrev-downcase nil)
+ '(company-go-insert-arguments nil)
  '(company-idle-delay 0)
  '(company-minimum-prefix-length 2)
  '(company-selection-wrap-around t)
  '(company-transformers '(company-sort-by-backend-importance))
  '(completion-ignore-case t t)
  '(default-tab-width 4 t)
- '(imenu-list-position 'left)
- '(imenu-list-size 30)
+ '(imenu-list-position 'left t)
+ '(imenu-list-size 30 t)
  '(indent-tabs-mode nil)
- '(inhibit-startup-message t)
  '(inhibit-startup-screen t)
  '(line-number-mode t)
  '(linum-delay t t)

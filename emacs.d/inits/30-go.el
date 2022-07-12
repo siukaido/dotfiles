@@ -10,3 +10,4 @@
     (setq gofmt-command "goimports")
     (add-hook 'before-save-hook 'gofmt-before-save)
     (add-to-list 'company-backends 'company-go)))
+(add-hook 'go-mode-hook 'go-eldoc-setup)
