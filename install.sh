@@ -25,10 +25,10 @@ relink ~/.gitconfig    $DIR/git-config
 relink ~/.inputrc      $DIR/inputrc
 relink ~/.screenrc     $DIR/screenrc
 relink ~/.emacs.d      $DIR/emacs.d
-relink ~/.bash_local "/Users/`whoami`/Library/Mobile Documents/com~apple~CloudDocs/program/dotfiles/bash_local"
-relink ~/.aws "/Users/`whoami`/Library/Mobile Documents/com~apple~CloudDocs/program/dotfiles/aws"
-relink ~/.kube "/Users/`whoami`/Library/Mobile Documents/com~apple~CloudDocs/program/dotfiles/kube"
-relink ~/.ssh "/Users/`whoami`/Library/Mobile Documents/com~apple~CloudDocs/program/dotfiles/ssh"
+relink ~/.bash_local "/Users/`whoami`/Library/Mobile Documents/com~apple~CloudDocs/work/0.dotfiles/bash_local"
+relink ~/.aws "/Users/`whoami`/Library/Mobile Documents/com~apple~CloudDocs/work/0.dotfiles/aws"
+relink ~/.kube "/Users/`whoami`/Library/Mobile Documents/com~apple~CloudDocs/work/0.dotfiles/kube"
+relink ~/.ssh "/Users/`whoami`/Library/Mobile Documents/com~apple~CloudDocs/work/0.dotfiles/ssh"
 
 mkdir ~/.bundle
 relink ~/.bundle/config $DIR/bundle/config
