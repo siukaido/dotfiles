@@ -210,8 +210,8 @@
  '(company-transformers '(company-sort-by-backend-importance))
  '(completion-ignore-case t t)
  '(default-tab-width 4 t)
- '(imenu-list-position 'left t)
- '(imenu-list-size 30 t)
+ '(imenu-list-position 'left)
+ '(imenu-list-size 30)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(line-number-mode t)
@@ -242,6 +242,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(tab-bar ((t (:background "Gray50"))) nil "Customized with leaf in `tab-bar-mode' block at `/Users/hideharu.saito/.emacs.d/init.el'")
- '(tab-bar-tab ((t (:background "white" :foreground "black" :underline t))) nil "Customized with leaf in `tab-bar-mode' block at `/Users/hideharu.saito/.emacs.d/init.el'")
- '(tab-bar-tab-inactive ((t (:background "Gray50"))) nil "Customized with leaf in `tab-bar-mode' block at `/Users/hideharu.saito/.emacs.d/init.el'"))
+ '(tab-bar ((t (:background "Gray50"))) nil "Customized with leaf in `tab-bar-mode' block at `/Users/hideharusaito/.emacs.d/init.el'")
+ '(tab-bar-tab ((t (:background "white" :foreground "black" :underline t))) nil "Customized with leaf in `tab-bar-mode' block at `/Users/hideharusaito/.emacs.d/init.el'")
+ '(tab-bar-tab-inactive ((t (:background "Gray50"))) nil "Customized with leaf in `tab-bar-mode' block at `/Users/hideharusaito/.emacs.d/init.el'"))

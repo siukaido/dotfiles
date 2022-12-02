@@ -3,7 +3,7 @@ export LANG=ja_JP.UTF-8
 export LC_AL=ja_JP.UTF-8
 
 # エディタ設定
-export EDITOR=/usr/local/bin/emacs
+export EDITOR=emacs
 
 # コマンド履歴設定
 export HISTTIMEFORMAT="%y/%m/%d %H:%M:%S: "
@@ -11,7 +11,7 @@ export HISTSIZE=300000
 export CONNECTION_REFRESH="true"
 
 # go設定
-export GOPATH="${HOME}/.go"
+export GOPATH="${HOME}/go"
 export GOENV_DISABLE_GOROOT=1
 export GOENV_DISABLE_GOPATH=1
 
@@ -23,6 +23,9 @@ LOCAL_BIN_PATH="${HOME}/bin"
 XCODE_BIN_PATH="/Applications/Xcode.app/Contents/Developer/usr/bin"
 GO_BIN_PATH="${GOPATH}/bin"
 export PATH="${GNUBIN_PATH}:${LOCAL_BIN_PATH}:${PATH}:/usr/loca/sbin:${XCODE_BIN_PATH}:${GO_BIN_PATH}"
+if [ -e /opt/homebrew/bin/brew ]; then
+    eval $(/opt/homebrew/bin/brew shellenv)
+fi
 if [ -d $HOME/.anyenv ]; then
     eval "$(anyenv init -)"
 else
@@ -53,9 +56,3 @@ fi
 if [ -f ~/.bash_local ]; then
     . ~/.bash_local
 fi
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/hideharu.saito/Applications/google-cloud-sdk/path.bash.inc' ]; then . '/Users/hideharu.saito/Applications/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/hideharu.saito/Applications/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/hideharu.saito/Applications/google-cloud-sdk/completion.bash.inc'; fi

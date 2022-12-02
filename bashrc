@@ -16,7 +16,11 @@ shopt -u histappend
 
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
-    eval `dircolors ~/.dir_colors`
+    if [ -e /opt/homebrew/bin/gdircolors ]; then
+        eval `gdircolors ~/.dir_colors`
+    else
+        eval `dircolors ~/.dir_colors`
+    fi
     alias ls='ls --color=auto'
 fi
 
