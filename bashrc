@@ -18,10 +18,11 @@ shopt -u histappend
 if [ "$TERM" != "dumb" ]; then
     if [ -e /opt/homebrew/bin/gdircolors ]; then
         eval `gdircolors ~/.dir_colors`
+        alias ls='gls --color=auto'
     else
         eval `dircolors ~/.dir_colors`
+        alias ls='ls --color=auto'
     fi
-    alias ls='ls --color=auto'
 fi
 
 # set variable identifying the chroot you work in (used in the prompt below)
