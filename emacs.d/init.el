@@ -176,6 +176,7 @@
     vue-mode
     ;; 50：その他mode
     markdown-mode
+    markdown-preview-mode
     ssh-config-mode
     yaml-mode
     terraform-mode
@@ -210,14 +211,13 @@
  '(company-transformers '(company-sort-by-backend-importance))
  '(completion-ignore-case t t)
  '(default-tab-width 4 t)
- '(imenu-list-position 'left)
- '(imenu-list-size 30)
+ '(imenu-list-position 'left t)
+ '(imenu-list-size 30 t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(line-number-mode t)
  '(linum-delay t t)
  '(make-backup-files nil)
- '(markdown-command "mdown")
  '(menu-bar-mode nil)
  '(package-archives
    '(("org" . "https://orgmode.org/elpa/")
