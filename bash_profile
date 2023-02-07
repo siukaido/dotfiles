@@ -18,7 +18,7 @@ export GOENV_DISABLE_GOPATH=1
 # PATH設定
 ## /usr/local/sbin を追加したいため上書き
 PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
-GNUBIN_PATH="/usr/local/opt/coreutils/libexec/gnubin"
+GNUBIN_PATH="/opt/homebrew/opt/coreutils/libexec/gnubin"
 LOCAL_BIN_PATH="${HOME}/bin"
 XCODE_BIN_PATH="/Applications/Xcode.app/Contents/Developer/usr/bin"
 GO_BIN_PATH="${GOPATH}/bin"

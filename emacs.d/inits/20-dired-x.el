@@ -2,6 +2,7 @@
 (add-hook 'dired-load-hook
    (function (lambda () (load "dired-x"))))
 (setq dired-listing-switches "-al --g")
+(setq dired-use-ls-dired t)
 
 ;; 一度に複数のファイルcoding systemを変換する
 (use-package dired-aux)
