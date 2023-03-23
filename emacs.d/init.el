@@ -159,6 +159,7 @@
     flycheck
     flycheck-pos-tip
     git-grep
+    auto-complete
     ;; 30：サーバサイドmode
     apache-mode
     dart-mode
