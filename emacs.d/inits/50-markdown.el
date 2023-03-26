@@ -6,7 +6,8 @@
 (custom-set-variables '(markdown-command "pandoc"))
 
 ; markdown preview mode
-(require 'markdown-preview-mode)
-;; https://cdnjs.com/libraries/github-markdown-css
-(setq markdown-preview-stylesheets
-      (list "https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css"))
+(use-package markdown-preview-mode
+  :config
+  ;; https://cdnjs.com/libraries/github-markdown-css
+  (setq markdown-preview-stylesheets
+        (list "https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css")))

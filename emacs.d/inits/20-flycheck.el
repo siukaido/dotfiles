@@ -25,5 +25,7 @@
 ;; https://github.com/flycheck/flycheck-pos-tip
 ;; エラー内容をその場にツールチップで表示するためのパッケージ
 ;;--------------------------------------------------------------------
-(with-eval-after-load 'flycheck
-  (flycheck-pos-tip-mode))
+(use-package flycheck-pos-tip
+  :config
+  (with-eval-after-load 'flycheck
+    (flycheck-pos-tip-mode)))
