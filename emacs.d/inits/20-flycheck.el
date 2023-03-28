@@ -9,6 +9,7 @@
   (add-hook 'go-mode-hook    'flycheck-mode)
   (add-hook 'perl-mode-hook  'flycheck-mode)
   (add-hook 'php-mode-hook   'flycheck-mode)
+  (add-hook 'prog-mode-hook 'flycheck-mode)
   ;;;; 40
   (add-hook 'js2-mode-hook   'flycheck-mode)
   (add-hook 'rjsx-mode       'flycheck-mode)
