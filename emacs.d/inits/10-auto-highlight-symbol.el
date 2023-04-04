@@ -1,7 +1,12 @@
-;;--------------------------------------------------------------------
-;; カーソルを合わせたシンボルを使用している箇所をハイライトするemacsパッケージ
-;;--------------------------------------------------------------------
-(use-package auto-highlight-symbol)
+;;; auto-highlight-symbol.el --- auto-highlight-symbol.el
 
-(global-auto-highlight-symbol-mode t)
-(ahs-set-idle-interval 0.8)
+;;; Commentary:
+;; カーソルを合わせたシンボルを使用している箇所をハイライトするemacsパッケージ
+
+;;; Code:
+(use-package auto-highlight-symbol
+  :ensure t
+  :config
+  (global-auto-highlight-symbol-mode t)
+  (ahs-set-idle-interval 0.8)
+  )

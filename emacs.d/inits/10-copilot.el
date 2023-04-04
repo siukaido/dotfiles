@@ -1,3 +1,9 @@
+;;; cooilot.el --- copilot for emacs -*- lexical-binding: t; -*-
+
+;;; Commentary:
+;; copilotの設定
+
+;;; Code:
 (straight-use-package
  '(copilot :type git :host github :repo "zerolfx/copilot.el" :files ("dist" "*.el")))
 

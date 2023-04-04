@@ -1,5 +1,12 @@
-;; 何も考えず公式のREADMEからコピペすればいいコード
-;; straight.el自身のインストールと初期設定を行ってくれる
+;;; init.el --- Emacs configuration
+
+;;; Commentary:
+;; Emacsの設定ファイル
+
+;;; Code:
+
+;;; straight.el自身のインストールと初期設定を行ってくれる
+;; このコードを実行すると、~/.emacs.d/straight/ 以下にstraight.elがインストールされる
 (setq straight-repository-branch "develop") ;; use the develop branch of straight.el
 
 (defvar bootstrap-version)
@@ -28,3 +35,5 @@
 (use-package init-loader
   :config
   (init-loader-load "~/.emacs.d/inits"))
+
+;;; init.el ends here
