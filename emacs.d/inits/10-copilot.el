@@ -2,6 +2,7 @@
 
 ;;; Commentary:
 ;; copilotの設定
+;; SEE: https://qiita.com/nobuyuki86/items/f3a98428220b101878e0
 
 ;;; Code:
 (straight-use-package
@@ -13,14 +14,16 @@
 ;; プログラムモードの場合、copilot-modeを実行
 (add-hook 'prog-mode-hook 'copilot-mode)
 
-;; copilot用にキーバインドを設定
 (defun my-tab ()
   (interactive)
   (or (copilot-accept-completion)
       (company-indent-or-complete-common nil)))
 
-(global-set-key (kbd "TAB") #'my-tab)
+(global-set-key (kbd "C-x TAB") #'my-tab)
+(global-set-key (kbd "C-x <tab>") #'my-tab)
 
 (with-eval-after-load 'company
-  (define-key company-active-map (kbd "TAB") #'my-tab)
-  (define-key company-mode-map (kbd "TAB") #'my-tab))
+  (define-key company-active-map (kbd "C-x TAB") #'my-tab)
+  (define-key company-active-map (kbd "C-x <tab>") #'my-tab)
+  (define-key company-mode-map (kbd "C-x TAB") #'my-tab)
+  (define-key company-mode-map (kbd "C-x <tab>") #'my-tab))
