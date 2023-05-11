@@ -19,11 +19,11 @@
   (or (copilot-accept-completion)
       (company-indent-or-complete-common nil)))
 
-(global-set-key (kbd "C-x TAB") #'my-tab)
-(global-set-key (kbd "C-x <tab>") #'my-tab)
+(global-set-key (kbd "TAB") #'my-tab)
+(global-set-key (kbd "<tab>") #'my-tab)
 
 (with-eval-after-load 'company
-  (define-key company-active-map (kbd "C-x TAB") #'my-tab)
-  (define-key company-active-map (kbd "C-x <tab>") #'my-tab)
-  (define-key company-mode-map (kbd "C-x TAB") #'my-tab)
-  (define-key company-mode-map (kbd "C-x <tab>") #'my-tab))
+  (define-key company-active-map (kbd "TAB") #'my-tab)
+  (define-key company-active-map (kbd "<tab>") #'my-tab)
+  (define-key company-mode-map (kbd "TAB") #'my-tab)
+  (define-key company-mode-map (kbd "<tab>") #'my-tab))

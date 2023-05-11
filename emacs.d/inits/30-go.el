@@ -10,4 +10,13 @@
     (setq gofmt-command "goimports")
     (add-hook 'before-save-hook 'gofmt-before-save)
     (add-to-list 'company-backends 'company-go)))
-(add-hook 'go-mode-hook 'go-eldoc-setup)
+
+(use-package go-eldoc
+  :init
+  :config
+  (with-eval-after-load 'go-mode
+    (add-hook 'go-mode-hook 'go-eldoc-setup)
+    (set-face-attribute 'eldoc-highlight-function-argument nil
+                        :underline t :foreground "green"
+                        :weight 'bold)
+    ))
