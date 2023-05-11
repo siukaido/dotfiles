@@ -22,10 +22,10 @@ LOCAL_BIN_PATH="${HOME}/bin"
 XCODE_BIN_PATH="/Applications/Xcode.app/Contents/Developer/usr/bin"
 GO_BIN_PATH="${GOPATH}/bin"
 PATH="${LOCAL_BIN_PATH}:${PATH}:${XCODE_BIN_PATH}:${GO_BIN_PATH}"
-if [ -e /opt/homebrew/bin/brew ]; then
+if [ -x /opt/homebrew/bin/brew ]; then
     eval $(/opt/homebrew/bin/brew shellenv)
 
-    if [ -e $(brew --prefix)/opt/coreutils/libexec/gnubin ]; then
+    if [ -d $(brew --prefix)/opt/coreutils/libexec/gnubin ]; then
         GNUBIN_PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin"
         PATH="${GNUBIN_PATH}:${PATH}"
     fi

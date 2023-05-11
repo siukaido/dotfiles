@@ -15,7 +15,7 @@ PROMPT_COMMAND='share_history'
 shopt -u histappend
 
 # enable color support of ls and also add handy aliases
-if [ -e /opt/homebrew/bin/gdircolors ]; then
+if [ -x /opt/homebrew/bin/gdircolors ]; then
     if [ -f ~/.dir_colors ]; then
         eval `gdircolors ~/.dir_colors`
     fi
@@ -30,19 +30,19 @@ fi
 # brew で入れたものの設定読み込み
 if hash brew 2>/dev/null; then
     # direnv
-    if [ -e $(brew --prefix)/bin/direnv ]; then
+    if [ -x $(brew --prefix)/bin/direnv ]; then
         eval "$(direnv hook bash)"
     else
         echo "does not exist direnv. plz install from brew"
     fi
     # thefuck
-    if [ -e $(brew --prefix)/bin/fuck ]; then
+    if [ -x $(brew --prefix)/bin/fuck ]; then
         eval "$(thefuck --alias)"
     else
         echo "does not exist thefuck. plz install from brew"
     fi
     # anyenv
-    if [ -e $(brew --prefix)/bin/anyenv ]; then
+    if [ -x $(brew --prefix)/bin/anyenv ]; then
         if [ -d $HOME/.anyenv ]; then
             eval "$(anyenv init -)"
         fi
