@@ -12,8 +12,8 @@ alias mv="mv -i"
 alias rm="rm -i"
 
 function chpwd() {
-	cd $1;
-	pwd;
+    cd $1;
+    pwd;
 }
 alias cd="chpwd"
 alias e="emacs"
@@ -33,4 +33,3 @@ alias svnst="svn status"
 alias svns="svn status"
 alias svndi="svn diff"
 alias svnd="svn diff"
-eval "$(thefuck --alias)"

@@ -18,31 +18,29 @@ export GOENV_DISABLE_GOPATH=1
 # PATH設定
 ## /usr/local/sbin を追加したいため上書き
 PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
-GNUBIN_PATH="/opt/homebrew/opt/coreutils/libexec/gnubin"
 LOCAL_BIN_PATH="${HOME}/bin"
 XCODE_BIN_PATH="/Applications/Xcode.app/Contents/Developer/usr/bin"
 GO_BIN_PATH="${GOPATH}/bin"
-export PATH="${GNUBIN_PATH}:${LOCAL_BIN_PATH}:${PATH}:/usr/loca/sbin:${XCODE_BIN_PATH}:${GO_BIN_PATH}"
+PATH="${LOCAL_BIN_PATH}:${PATH}:${XCODE_BIN_PATH}:${GO_BIN_PATH}"
 if [ -e /opt/homebrew/bin/brew ]; then
     eval $(/opt/homebrew/bin/brew shellenv)
-fi
-if [ -d $HOME/.anyenv ]; then
-    eval "$(anyenv init -)"
+
+    if [ -e $(brew --prefix)/opt/coreutils/libexec/gnubin ]; then
+        GNUBIN_PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin"
+        PATH="${GNUBIN_PATH}:${PATH}"
+    fi
 else
-    echo "plz install anyenv. @see https://github.com/riywo/anyenv"
+    echo "does not exist homebrew!!"
 fi
-if [ -d $HOME/Applications/flutter ]; then
-   export PATH="${PATH}:${HOME}/Applications/flutter/bin"
-fi
-if [ -f "${HOME}/Applications/google-cloud-sdk/path.bash.inc" ]; then
-   source "${HOME}/Applications/google-cloud-sdk/path.bash.inc"
-fi
-if [ -f "${HOME}/Applications/google-cloud-sdk/completion.bash.inc" ]; then
-   source "${HOME}/Applications/google-cloud-sdk/completion.bash.inc"
-fi
+export PATH
 
 # LIBRARY_PATH設定
 export LIBRARY_PATH=/usr/local/include/:${LIBRARY_PATH}
+
+# item2 の設定読み込み
+if [ -f "${HOME}/.iterm2_shell_integration.bash" ]; then
+    source "${HOME}/.iterm2_shell_integration.bash"
+fi
 
 # include .bashrc if it exists
 if [ -f ~/.bashrc ]; then

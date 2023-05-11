@@ -15,33 +15,52 @@ PROMPT_COMMAND='share_history'
 shopt -u histappend
 
 # enable color support of ls and also add handy aliases
-if [ "$TERM" != "dumb" ]; then
-    if [ -e /opt/homebrew/bin/gdircolors ]; then
-        if [ -f ~/.dir_colors ]; then
-            eval `gdircolors ~/.dir_colors`
-        fi
-        alias ls='gls --color=auto'
-    else
-        if [ -f ~/.dir_colors ]; then
-            eval `dircolors ~/.dir_colors`
-        fi
-        alias ls='ls --color=auto'
+if [ -e /opt/homebrew/bin/gdircolors ]; then
+    if [ -f ~/.dir_colors ]; then
+        eval `gdircolors ~/.dir_colors`
     fi
+    alias ls='gls --color=auto'
+else
+    if [ -f ~/.dir_colors ]; then
+        eval `dircolors ~/.dir_colors`
+    fi
+    alias ls='ls --color=auto'
 fi
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "$debian_chroot" -a -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
-# xxx_completion
-if [ -f "/usr/local/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-  __GIT_PROMPT_DIR="/usr/local/opt/bash-git-prompt/share"
-  source "/usr/local/opt/bash-git-prompt/share/gitprompt.sh"
-fi
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-    GIT_PS1_SHOWDIRTYSTATE=true
+# brew で入れたものの設定読み込み
+if hash brew 2>/dev/null; then
+    # direnv
+    if [ -e $(brew --prefix)/bin/direnv ]; then
+        eval "$(direnv hook bash)"
+    else
+        echo "does not exist direnv. plz install from brew"
+    fi
+    # thefuck
+    if [ -e $(brew --prefix)/bin/fuck ]; then
+        eval "$(thefuck --alias)"
+    else
+        echo "does not exist thefuck. plz install from brew"
+    fi
+    # anyenv
+    if [ -e $(brew --prefix)/bin/anyenv ]; then
+        if [ -d $HOME/.anyenv ]; then
+            eval "$(anyenv init -)"
+        fi
+    else
+        echo "does not exist anyenv. plz install from brew"
+    fi
+    # bash_completion
+    if [ -f $(brew --prefix)/etc/bash_completion ]; then
+        . $(brew --prefix)/etc/bash_completion
+        GIT_PS1_SHOWDIRTYSTATE=true
+    fi
+    # google-cloud-sdk
+    if [ -f "$(brew --prefix)/share/google-cloud-sdk/path.bash.inc" ]; then
+        source "$(brew --prefix)/share/google-cloud-sdk/path.bash.inc"
+    fi
+    if [ -f "$(brew --prefix)/share/google-cloud-sdk/completion.bash.inc" ]; then
+        source "$(brew --prefix)/share/google-cloud-sdk/completion.bash.inc"
+    fi
 fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
@@ -56,10 +75,3 @@ xterm-color)
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
     ;;
 esac
-
-# thefuck
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-eval $(thefuck --alias)
-
-# direnv
-eval "$(direnv hook bash)"
