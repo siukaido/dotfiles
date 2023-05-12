@@ -58,8 +58,7 @@ brew "lv"
 brew "mercurial"
 brew "mkcert"
 brew "protobuf"
-brew "mysql", link: false
-brew "mysql-client@5.7", link: true
+brew "mysql"
 brew "nginx"
 brew "nkf"
 brew "nmap"
