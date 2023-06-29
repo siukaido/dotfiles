@@ -8,13 +8,13 @@
         "revision": "d282aa0778330b85e487ed67b491e1d29201e730"
       },
       "homebrew/cask-versions": {
-        "revision": "84d661a5bd826443b99db34ce590e6f72f804555"
+        "revision": "45da49aeab9d4010163392b3b6abb0856ef9b663"
       },
       "homebrew/core": {
         "revision": "cc466336503410a599099d35a7e12bbfbc70276b"
       },
       "k1low/tap": {
-        "revision": "5744860d1c203895a4e2d097470900e39cb0d6a8"
+        "revision": "0ebbcbd661d0cef5b7124c8b8aa133c39635f4c3"
       },
       "weaveworks/tap": {
         "revision": "62c51c1f427ec30672307da9d1bdb7abded27be6"
@@ -4148,6 +4148,12 @@
         "options": {
           "full_name": "vlc"
         }
+      },
+      "messenger": {
+        "version": "189.0.0.24.146",
+        "options": {
+          "full_name": "messenger"
+        }
       }
     }
   },
@@ -4162,12 +4168,12 @@
         "macOS": "10.15.7"
       },
       "big_sur": {
-        "HOMEBREW_VERSION": "3.2.1",
+        "HOMEBREW_VERSION": "4.0.26",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "cc466336503410a599099d35a7e12bbfbc70276b",
-        "CLT": "12.0.0.32.29",
-        "Xcode": "12.5.1",
-        "macOS": "11.4"
+        "Homebrew/homebrew-core": "api",
+        "CLT": "13.2.0.0.1.1638488800",
+        "Xcode": "12.5",
+        "macOS": "11.7.8"
       },
       "ventura": {
         "HOMEBREW_VERSION": "4.0.26",
