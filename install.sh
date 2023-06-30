@@ -35,7 +35,7 @@ relink ~/.bundle/config $DIR/bundle/config
 if [ `uname` == "Darwin" ]; then
     # Homebrew
     echo ""
-    if [ -f /usr/local/bin/brew ]; then
+    if hash brew 2>/dev/null; then
         echo "UPDATE Homebrew"
         brew update
     else
