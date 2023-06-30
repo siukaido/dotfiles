@@ -40,7 +40,7 @@ if [ `uname` == "Darwin" ]; then
         brew update
     else
         echo "INSTALL Homebrew"
-        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
     echo "Exec brew bundle"
     brew tap Homebrew/bundle
@@ -61,3 +61,11 @@ if [ `uname` == "Darwin" ]; then
         anyenv install phpenv
     fi
 fi
+
+# App Store
+echo ""
+echo "application install from AppStore"
+## runcat
+mas install 1429033973
+## LINE
+mas install 539883307
