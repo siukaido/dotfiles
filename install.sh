@@ -69,3 +69,5 @@ echo "application install from AppStore"
 mas install 1429033973
 ## LINE
 mas install 539883307
+## 1Password for safari
+mas install 1569813296
