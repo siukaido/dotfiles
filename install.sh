@@ -71,3 +71,5 @@ mas install 1429033973
 mas install 539883307
 ## 1Password for safari
 mas install 1569813296
+## Xcode
+mas install 497799835
