@@ -23,11 +23,19 @@ XCODE_BIN_PATH="/Applications/Xcode.app/Contents/Developer/usr/bin"
 GO_BIN_PATH="${GOPATH}/bin"
 PATH="${LOCAL_BIN_PATH}:${PATH}:${XCODE_BIN_PATH}:${GO_BIN_PATH}"
 if [ -x /opt/homebrew/bin/brew ]; then
+    # Brew関連のpathを設定
     eval $(/opt/homebrew/bin/brew shellenv)
 
+    # gnubin
     if [ -d $(brew --prefix)/opt/coreutils/libexec/gnubin ]; then
         GNUBIN_PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin"
         PATH="${GNUBIN_PATH}:${PATH}"
+    fi
+
+    # flutter
+    if [ -d $(brew --prefix)/Caskroom/flutter/3.10.6/flutter/bin ]; then
+        FLUTTER_BIN_PATH="$(brew --prefix)/Caskroom/flutter/3.10.6/flutter/bin"
+        PATH="${FLUTTER_BIN_PATH}:${PATH}"
     fi
 else
     echo "does not exist homebrew!!"
