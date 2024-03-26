@@ -50,9 +50,13 @@ if hash brew 2>/dev/null; then
         echo "does not exist anyenv. plz install from brew"
     fi
     # bash_completion
-    if [ -f $(brew --prefix)/etc/bash_completion ]; then
-        . $(brew --prefix)/etc/bash_completion
-        GIT_PS1_SHOWDIRTYSTATE=true
+    if [ -f $(brew --prefix)/etc/profile.d/bash_completion.sh ]; then
+        . $(brew --prefix)/etc/profile.d/bash_completion.sh
+        GIT_PS1_SHOWDIRTYSTATE=true # ファイル変更の有無
+        GIT_PS1_SHOWSTASHSTATE=true # スタッシュの有無
+        GIT_PS1_SHOWUNTRACKEDFILES=true # 新規ファイルの有無
+        # GIT_PS1_SHOWUPSTREAM=true # HEAD とそのアップストリームの違い
+        # GIT_PS1_SHOWCOLORHINTS=true # 表示内容のカラー化
     fi
     # google-cloud-sdk
     if [ -f "$(brew --prefix)/share/google-cloud-sdk/path.bash.inc" ]; then
