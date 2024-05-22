@@ -77,6 +77,7 @@
              ("C-x C-u" . universal-argument)
              ("C-x C-r" . point-to-register)
              ("C-x C-j" . jump-to-register)
+             ("C-<return>" . newline-and-indent)
              ))
     (leaf minibuffer
       :config
