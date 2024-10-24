@@ -48,7 +48,7 @@ if hash brew 2>/dev/null; then
 
             # goenv
             eval "$(goenv init -)"
-            export PATH="${GOROOT}/bin:${PATH}:${GOPATH}/bin"
+            export PATH="${GOROOT}/bin:${PATH}"
         fi
     else
         echo "does not exist anyenv. plz install from brew"

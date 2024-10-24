@@ -10,12 +10,17 @@ export HISTTIMEFORMAT="%y/%m/%d %H:%M:%S: "
 export HISTSIZE=300000
 export CONNECTION_REFRESH="true"
 
+# go / goenvの設定
+export GOPATH="${HOME}/go"
+export GOENV_DISABLE_GOPATH=1
+
 # PATH設定
 ## /usr/local/sbin を追加したいため上書き
 PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
 LOCAL_BIN_PATH="${HOME}/bin"
 XCODE_BIN_PATH="/Applications/Xcode.app/Contents/Developer/usr/bin"
-PATH="${LOCAL_BIN_PATH}:${PATH}:${XCODE_BIN_PATH}"
+GO_BIN_PATH="${GOPATH}/bin"
+PATH="${LOCAL_BIN_PATH}:${PATH}:${XCODE_BIN_PATH}:${GO_BIN_PATH}"
 if [ -x /opt/homebrew/bin/brew ]; then
     # Brew関連のpathを設定
     eval $(/opt/homebrew/bin/brew shellenv)
