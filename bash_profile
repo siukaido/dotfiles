@@ -10,18 +10,12 @@ export HISTTIMEFORMAT="%y/%m/%d %H:%M:%S: "
 export HISTSIZE=300000
 export CONNECTION_REFRESH="true"
 
-# go設定
-export GOPATH="${HOME}/go"
-export GOENV_DISABLE_GOROOT=1
-export GOENV_DISABLE_GOPATH=1
-
 # PATH設定
 ## /usr/local/sbin を追加したいため上書き
 PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/Library/Apple/usr/bin"
 LOCAL_BIN_PATH="${HOME}/bin"
 XCODE_BIN_PATH="/Applications/Xcode.app/Contents/Developer/usr/bin"
-GO_BIN_PATH="${GOPATH}/bin"
-PATH="${LOCAL_BIN_PATH}:${PATH}:${XCODE_BIN_PATH}:${GO_BIN_PATH}"
+PATH="${LOCAL_BIN_PATH}:${PATH}:${XCODE_BIN_PATH}"
 if [ -x /opt/homebrew/bin/brew ]; then
     # Brew関連のpathを設定
     eval $(/opt/homebrew/bin/brew shellenv)
@@ -43,7 +37,11 @@ fi
 export PATH
 
 # LIBRARY_PATH設定
-export LIBRARY_PATH=/usr/local/include/:${LIBRARY_PATH}
+LIBRARY_PATH=/usr/local/include/:${LIBRARY_PATH}
+if [ -x /opt/homebrew/bin/brew ]; then
+    LIBRARY_PATH=/opt/homebrew/include/:${LIBRARY_PATH}
+fi
+export LIBRARY_PATH
 
 # item2 の設定読み込み
 if [ -f "${HOME}/.iterm2_shell_integration.bash" ]; then

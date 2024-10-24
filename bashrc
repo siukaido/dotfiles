@@ -45,6 +45,10 @@ if hash brew 2>/dev/null; then
     if [ -x $(brew --prefix)/bin/anyenv ]; then
         if [ -d $HOME/.anyenv ]; then
             eval "$(anyenv init -)"
+
+            # goenv
+            eval "$(goenv init -)"
+            export PATH="${GOROOT}/bin:${PATH}:${GOPATH}/bin"
         fi
     else
         echo "does not exist anyenv. plz install from brew"

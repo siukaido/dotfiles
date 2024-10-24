@@ -33,3 +33,6 @@ alias svnst="svn status"
 alias svns="svn status"
 alias svndi="svn diff"
 alias svnd="svn diff"
+
+# docker
+alias dc="docker compose"
