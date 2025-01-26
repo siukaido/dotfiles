@@ -2,7 +2,7 @@
   :ensure t
   :mode (("\\.js\\'" . rjsx-mode)
          ("\\.jsx\\'" . rjsx-mode)
-         ("\\.mjs\\'" . rjsx-mode)
+         ("\\.mjs\\'" . rjsx-mode))
   :config
   (setq indent-tabs-mode nil) ;;インデントはタブではなくスペース
   (setq js-indent-level 2) ;;スペースは２つ、デフォルトは4
