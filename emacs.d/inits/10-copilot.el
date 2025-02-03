@@ -9,7 +9,7 @@
  '(copilot :type git :host github :repo "zerolfx/copilot.el" :files ("dist" "*.el")))
 
 ;; 使用するnode.jsを指定
-(setq copilot-node-executable "~/.anyenv/envs/nodenv/versions/17.9.1/bin/node")
+(setq copilot-node-executable "~/.anyenv/envs/nodenv/versions/22.13.1/bin/node")
 
 ;; プログラムモードの場合、copilot-modeを実行
 (add-hook 'prog-mode-hook 'copilot-mode)

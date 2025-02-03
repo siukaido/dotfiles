@@ -1,4 +1,5 @@
 (use-package company
+  :requires (company-go)
   :config
   (global-company-mode);
   (custom-set-variables
