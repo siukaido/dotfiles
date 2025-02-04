@@ -21,9 +21,15 @@ LOCAL_BIN_PATH="${HOME}/bin"
 XCODE_BIN_PATH="/Applications/Xcode.app/Contents/Developer/usr/bin"
 GO_BIN_PATH="${GOPATH}/bin"
 PATH="${LOCAL_BIN_PATH}:${PATH}:${XCODE_BIN_PATH}:${GO_BIN_PATH}"
-if [ -x /opt/homebrew/bin/brew ]; then
+
+BREW_PATH="/opt/homebrew/bin/brew"
+if [ `uname` == "Linux" ]; then
+    BREW_PATH="/home/linuxbrew/.linuxbrew/bin/brew"
+fi
+
+if [ -x $BREW_PATH ]; then
     # Brew関連のpathを設定
-    eval $(/opt/homebrew/bin/brew shellenv)
+    eval $($BREW_PATH shellenv)
 
     # gnubin
     if [ -d $(brew --prefix)/opt/coreutils/libexec/gnubin ]; then

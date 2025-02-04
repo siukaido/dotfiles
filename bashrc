@@ -15,7 +15,7 @@ PROMPT_COMMAND='share_history'
 shopt -u histappend
 
 # enable color support of ls and also add handy aliases
-if [ -x /opt/homebrew/bin/gdircolors ]; then
+if [ -x $(brew --prefix)/bin/gdircolors ]; then
     if [ -f ~/.dir_colors ]; then
         eval `gdircolors ~/.dir_colors`
     fi
