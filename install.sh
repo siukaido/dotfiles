@@ -21,7 +21,7 @@ relink ~/.bash_profile $DIR/bash_profile
 relink ~/.bashrc       $DIR/bashrc
 relink ~/.bash_aliases $DIR/bash_aliases
 relink ~/.dir_colors   $DIR/dir_colors
-relink ~/.gitconfig    $DIR/git-config
+relink ~/.gitconfig    $DIR/gitconfig
 relink ~/.inputrc      $DIR/inputrc
 relink ~/.screenrc     $DIR/screenrc
 relink ~/.emacs.d      $DIR/emacs.d
