@@ -42,6 +42,10 @@ if [ -x $BREW_PATH ]; then
         FLUTTER_BIN_PATH="$(brew --prefix)/Caskroom/flutter/3.10.6/flutter/bin"
         PATH="${FLUTTER_BIN_PATH}:${PATH}"
     fi
+
+    if [ -x $(brew --prefix)/bin/aqua ]; then
+        PATH=".local/share/aquaproj-aqua/bin/:${PATH}"
+    fi
 else
     echo "does not exist homebrew!!"
 fi
