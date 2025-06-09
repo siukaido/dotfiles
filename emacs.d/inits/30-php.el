@@ -1,9 +1,17 @@
-(autoload 'php-mode "php-mode" "Major mode for editing php code." t)
-(add-to-list 'auto-mode-alist '("\\.php$"  . php-mode))
-(add-to-list 'auto-mode-alist '("\\.php5$" . php-mode))
-(add-to-list 'auto-mode-alist '("\\.inc$"  . php-mode))
-(add-to-list 'auto-mode-alist '("\\.hh$"   . php-mode))
+(defun my-php-mode-init ()
+  (subword-mode 1)
+  (setq-local show-trailing-whitespace t)
+  (setq-local ac-disable-faces '(font-lock-comment-face font-lock-string-face))
+  (add-hook 'hack-local-variables-hook 'php-ide-turn-on nil t))
 
-(add-hook 'php-mode-hook
-  (lambda ()
-    (c-set-style "pear")))
+(with-eval-after-load 'php-mode
+  (add-hook 'php-mode-hook #'my-php-mode-init)
+  (custom-set-variables
+   '(php-mode-coding-style 'psr2)
+   '(php-mode-template-compatibility nil)
+   '(php-imenu-generic-expression 'php-imenu-generic-expression-simple))
+
+  ;; If you find phpcs to be bothersome, you can disable it.
+  (when (require 'flycheck nil)
+    (add-to-list 'flycheck-disabled-checkers 'php-phpmd)
+    (add-to-list 'flycheck-disabled-checkers 'php-phpcs)))

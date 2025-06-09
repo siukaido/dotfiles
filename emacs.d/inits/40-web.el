@@ -17,6 +17,7 @@
   (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.html\\'". web-mode))
   (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode)))
+  (add-to-list 'auto-mode-alist '("\\.ctp\\'" . web-mode))
 (defun web-mode-hook ()
   "Hooks for Web mode."
   (setq web-mode-markup-indent-offset   2))

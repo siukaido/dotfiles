@@ -54,9 +54,15 @@
     (show-paren-mode t)            ;; 対応する括弧をハイライト
     (global-auto-revert-mode 1)    ;; 編集時 buffer 再読み込み
     (fset 'yes-or-no-p 'y-or-n-p)  ;; Emacs の質問を y/n に
-    ;; linum-mode をいじって Emacs を高速化
-    (defadvice linum-schedule (around my-linum-schedule () activate)
-      (run-with-idle-timer 0.2 nil #'linum-update-current))
+    ;; 行番号を表示させる
+    (progn
+      (global-display-line-numbers-mode)
+      (set-face-attribute 'line-number nil
+                          :foreground "DarkOliveGreen"
+                          :background "#131521")
+      (set-face-attribute 'line-number-current-line nil
+                                                    :foreground "gold")
+      )
     )
   ;;--------------------------------------------------------------------
   ;; keybind

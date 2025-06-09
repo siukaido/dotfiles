@@ -3,6 +3,7 @@
 ;; 事前に go get golang.org/x/tools/cmd/goimports しておくこと
 ;(let ((envs '("GOROOT" "GOPATH")))
 ;  (exec-path-from-shell-copy-envs envs))
+(use-package company-go)
 (use-package go-mode
   :init
   :config

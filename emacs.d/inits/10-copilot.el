@@ -21,6 +21,7 @@
 
 (global-set-key (kbd "TAB") #'my-tab)
 (global-set-key (kbd "<tab>") #'my-tab)
+(setq copilot-max-char-warning-disabled t)
 
 (with-eval-after-load 'company
   (define-key company-active-map (kbd "TAB") #'my-tab)
