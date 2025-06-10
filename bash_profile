@@ -44,7 +44,7 @@ if [ -x $BREW_PATH ]; then
     fi
 
     if [ -x $(brew --prefix)/bin/aqua ]; then
-        PATH=".local/share/aquaproj-aqua/bin/:${PATH}"
+        PATH="${HOME}/.local/share/aquaproj-aqua/bin/:${PATH}"
     fi
 else
     echo "does not exist homebrew!!"
