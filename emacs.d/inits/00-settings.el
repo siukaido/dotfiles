@@ -55,15 +55,16 @@
     (global-auto-revert-mode 1)    ;; 編集時 buffer 再読み込み
     (fset 'yes-or-no-p 'y-or-n-p)  ;; Emacs の質問を y/n に
     ;; 行番号を表示させる
-    (progn
-      (global-display-line-numbers-mode)
-      (set-face-attribute 'line-number nil
-                          :foreground "DarkOliveGreen"
-                          :background "#131521")
-      (set-face-attribute 'line-number-current-line nil
-                                                    :foreground "gold")
-      )
-    )
+    ;; と、コピーする時に行番号もコピーされてしまうので消しちゃう
+    ;; (progn
+    ;;   (global-display-line-numbers-mode)
+    ;;   (set-face-attribute 'line-number nil
+    ;;                       :foreground "DarkOliveGreen"
+    ;;                       :background "#131521")
+    ;;   (set-face-attribute 'line-number-current-line nil
+    ;;                                                 :foreground "gold")
+    ;;   )
+     )
   ;;--------------------------------------------------------------------
   ;; keybind
   ;;--------------------------------------------------------------------
