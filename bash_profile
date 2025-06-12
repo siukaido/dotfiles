@@ -52,9 +52,9 @@ fi
 export PATH
 
 # LIBRARY_PATH設定
-LIBRARY_PATH=/usr/local/include/:${LIBRARY_PATH}
-if [ -x /opt/homebrew/bin/brew ]; then
-    LIBRARY_PATH=/opt/homebrew/include/:${LIBRARY_PATH}
+if [ -x $(brew --prefix)/bin/brew ]; then
+    CPATH="$(brew --prefix)/include:${CPATH}"
+    LIBRARY_PATH="$(brew --prefix)/lib/:${LIBRARY_PATH}"
 fi
 export LIBRARY_PATH
 

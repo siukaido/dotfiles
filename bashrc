@@ -49,6 +49,9 @@ if hash brew 2>/dev/null; then
             # goenv
             eval "$(goenv init -)"
             export PATH="${GOROOT}/bin:${PATH}"
+
+            # rbenv
+            eval "$(rbenv init - --no-rehash bash)"
         fi
     else
         echo "does not exist anyenv. plz install from brew"
