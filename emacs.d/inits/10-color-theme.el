@@ -6,5 +6,10 @@
 ;;; Code
 ;; https://github.com/whitlockjc/atom-dark-theme-emacs
 (use-package atom-dark-theme
+  :init
+  (load-theme 'atom-dark t)
   :config
-  (load-theme 'atom-dark t))
+  ;; カスタマイズが必要な場合はここに追加
+  )
+
+;;; 10-color-theme.el ends here

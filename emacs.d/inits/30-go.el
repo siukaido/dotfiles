@@ -1,6 +1,12 @@
-;; go-mode
-;; global-whitespace-modeを使うときはindent-tabs-modeをnilにすること、companyが誤作動する
+;;; 30-go.el -*- lexical-binding: t; -*- --- Go言語開発環境設定
+
+;;; Commentary:
+;; Go言語の開発環境設定
+;; goimportsによる自動フォーマット、company-goによる補完機能
 ;; 事前に go get golang.org/x/tools/cmd/goimports しておくこと
+;; global-whitespace-modeを使うときはindent-tabs-modeをnilにすること、companyが誤作動する
+
+;;; Code:
 ;(let ((envs '("GOROOT" "GOPATH")))
 ;  (exec-path-from-shell-copy-envs envs))
 (use-package company-go)
@@ -21,3 +27,5 @@
                         :underline t :foreground "green"
                         :weight 'bold)
     ))
+
+;;; 30-go.el ends here

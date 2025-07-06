@@ -1,30 +1,37 @@
-;;; cooilot.el --- copilot for emacs -*- lexical-binding: t; -*-
+;;; copilot.el --- copilot for emacs -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; copilotの設定
 ;; SEE: https://qiita.com/nobuyuki86/items/f3a98428220b101878e0
 
 ;;; Code:
-(straight-use-package
- '(copilot :type git :host github :repo "zerolfx/copilot.el" :files ("dist" "*.el")))
+(use-package copilot
+  :straight (:type git :host github :repo "zerolfx/copilot.el" :files ("dist" "*.el"))
+  :custom
+  (copilot-node-executable "~/.anyenv/envs/nodenv/versions/22.13.1/bin/node")
+  (copilot-max-char-warning-disabled t)
+  :hook (prog-mode . copilot-mode)
+  :config
+  ;; TABキーでCopilotの補完を受け入れる関数
+  (defun my-copilot-tab ()
+    "Copilotの補完を優先的に受け入れ、なければcompanyの補完を行う"
+    (interactive)
+    (or (copilot-accept-completion)
+        (company-indent-or-complete-common nil)))
 
-;; 使用するnode.jsを指定
-(setq copilot-node-executable "~/.anyenv/envs/nodenv/versions/22.13.1/bin/node")
+  ;; prog-mode-mapでのみTABキーを設定
+  (with-eval-after-load 'prog-mode
+    (define-key prog-mode-map (kbd "TAB") #'my-copilot-tab)
+    (define-key prog-mode-map (kbd "<tab>") #'my-copilot-tab))
 
-;; プログラムモードの場合、copilot-modeを実行
-(add-hook 'prog-mode-hook 'copilot-mode)
+  ;; company-modeとの統合
+  (with-eval-after-load 'company
+    ;; prog-modeでのみ有効になるようにフックで設定
+    (add-hook 'prog-mode-hook
+              (lambda ()
+                (define-key company-active-map (kbd "TAB") #'my-copilot-tab)
+                (define-key company-active-map (kbd "<tab>") #'my-copilot-tab)
+                (define-key company-mode-map (kbd "TAB") #'my-copilot-tab)
+                (define-key company-mode-map (kbd "<tab>") #'my-copilot-tab)))))
 
-(defun my-tab ()
-  (interactive)
-  (or (copilot-accept-completion)
-      (company-indent-or-complete-common nil)))
-
-(global-set-key (kbd "TAB") #'my-tab)
-(global-set-key (kbd "<tab>") #'my-tab)
-(setq copilot-max-char-warning-disabled t)
-
-(with-eval-after-load 'company
-  (define-key company-active-map (kbd "TAB") #'my-tab)
-  (define-key company-active-map (kbd "<tab>") #'my-tab)
-  (define-key company-mode-map (kbd "TAB") #'my-tab)
-  (define-key company-mode-map (kbd "<tab>") #'my-tab))
+;;; 10-copilot.el ends here

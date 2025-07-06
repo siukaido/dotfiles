@@ -1,5 +1,11 @@
+;;; 40-typescript.el -*- lexical-binding: t; -*- --- TypeScriptファイル編集モード
+
+;;; Commentary:
+;; TypeScriptファイル（.ts）の基本的な編集モード
+;; シンタックスハイライトとインデント設定
+
+;;; Code:
 (use-package typescript-mode
-  :ensure t
-  :mode "\\.ts\\'"
-  :config
-  (setq typescript-indent-level 2))
+  :mode "\\.ts\\'")
+
+;;; 40-typescript.el ends here

@@ -1,3 +1,11 @@
+;;; 40-tide.el -*- lexical-binding: t; -*- --- TypeScript IDE機能設定
+
+;;; Commentary:
+;; TypeScript Interactive Development Environment (tide)の設定
+;; TypeScript/JavaScript向けの高度なIDE機能を提供
+;; 自動補完、型情報表示、リファクタリング機能など
+
+;;; Code:
 (use-package tide)
 (defun setup-tide-mode ()
   (interactive)
@@ -20,3 +28,5 @@
           (lambda ()
             (when (string-equal "tsx" (file-name-extension buffer-file-name))
               (setup-tide-mode))))
+
+;;; 40-tide.el ends here

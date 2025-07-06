@@ -1,3 +1,11 @@
+;;; 30-php.el -*- lexical-binding: t; -*- --- PHP開発環境設定
+
+;;; Commentary:
+;; PHP開発環境の設定
+;; PSR-2コーディング規約に準拠
+;; php-modeとphp-ideの統合設定
+
+;;; Code:
 (defun my-php-mode-init ()
   (subword-mode 1)
   (setq-local show-trailing-whitespace t)
@@ -15,3 +23,5 @@
   (when (require 'flycheck nil)
     (add-to-list 'flycheck-disabled-checkers 'php-phpmd)
     (add-to-list 'flycheck-disabled-checkers 'php-phpcs)))
+
+;;; 30-php.el ends here
