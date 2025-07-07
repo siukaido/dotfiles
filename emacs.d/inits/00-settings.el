@@ -22,6 +22,8 @@
   (scroll-step 1)                          ; スクロール時の移動量を1に
   (column-number-mode t)                   ; カラム番号を表示
   (line-number-mode t)                     ; 行番号を表示
+  (tool-bar-mode nil)                      ; ツールバーを非表示
+  (menu-bar-mode nil)                      ; メニューバーを非表示
   (transient-mark-mode t)                  ; 選択領域をハイライト
   (show-paren-delay 0)                     ; 対応する括弧のハイライトに対するdelay
   (truncate-lines t)                       ; 通常のウィンドウで行を折り返さない
@@ -49,9 +51,9 @@
 
   ;; GUIモードの設定
   (when (display-graphic-p)
-    (tool-bar-mode -1)                     ; ツールバーを非表示
-    (menu-bar-mode -1)                     ; メニューバーを非表示
-    (scroll-bar-mode -1))                  ; スクロールバーを非表示
+    (tool-bar-mode t)                     ; ツールバーを表示
+    (menu-bar-mode t)                     ; メニューバーを表示
+    (scroll-bar-mode t))                  ; スクロールバーを表示
 
   ;; 行番号表示を無効化
   ;; (when (version<= "26.0.50" emacs-version)
