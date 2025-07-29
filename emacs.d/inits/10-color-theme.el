@@ -10,6 +10,8 @@
   (load-theme 'atom-dark t)
   :config
   ;; カスタマイズが必要な場合はここに追加
+  (custom-set-faces
+   '(which-func ((t (:foreground "#96CBFE" :weight bold)))))
   )
 
 ;;; 10-color-theme.el ends here

@@ -8,6 +8,7 @@
 ;;; Code:
 (use-package ruby-mode
   :straight nil  ; 組み込みパッケージ
+  :mode "\\.j?builder$"
   :config
   (setq ruby-insert-encoding-magic-comment nil))
 

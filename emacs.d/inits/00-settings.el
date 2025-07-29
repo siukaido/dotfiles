@@ -73,6 +73,7 @@
   (auto-compression-mode 1)                ; 圧縮ファイルの閲覧可能にする
   (show-paren-mode t)                      ; 対応する括弧をハイライト
   (global-auto-revert-mode 1)              ; ファイルが変更されたら自動的に再読み込み
+  (which-function-mode 1)                  ; 現在の関数名をモードラインに表示
 
   ;; インデント時に次の行へ移動する関数
   (defun indent-and-next-line ()
