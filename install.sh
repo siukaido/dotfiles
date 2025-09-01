@@ -25,6 +25,8 @@ relink ~/.gitconfig    $DIR/gitconfig
 relink ~/.inputrc      $DIR/inputrc
 relink ~/.screenrc     $DIR/screenrc
 relink ~/.emacs.d      $DIR/emacs.d
+mkdir ~/.claude
+relink ~/.claude/CLAUDE.md $DIR/CLAUDE.md
 relink ~/.bash_local "/Users/`whoami`/Library/Mobile Documents/com~apple~CloudDocs/work/0.dotfiles/bash_local"
 relink ~/.aws "/Users/`whoami`/Library/Mobile Documents/com~apple~CloudDocs/work/0.dotfiles/aws"
 relink ~/.ssh "/Users/`whoami`/Library/Mobile Documents/com~apple~CloudDocs/work/0.dotfiles/ssh"
