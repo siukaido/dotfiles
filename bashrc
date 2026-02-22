@@ -86,3 +86,11 @@ xterm-color)
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
     ;;
 esac
+
+# pnpm
+export PNPM_HOME="~/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
