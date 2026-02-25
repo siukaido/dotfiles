@@ -20,10 +20,13 @@ DIR=$( cd "$( dirname "$0" )" && pwd )
 relink ~/.bash_profile $DIR/bash_profile
 relink ~/.bashrc       $DIR/bashrc
 relink ~/.bash_aliases $DIR/bash_aliases
+relink ~/.zprofile     $DIR/zprofile
+relink ~/.zshrc        $DIR/zshrc
 relink ~/.dir_colors   $DIR/dir_colors
 relink ~/.gitconfig    $DIR/gitconfig
 relink ~/.inputrc      $DIR/inputrc
 relink ~/.screenrc     $DIR/screenrc
+relink ~/.tmux.conf    $DIR/tmux.conf
 relink ~/.emacs.d      $DIR/emacs.d
 mkdir ~/.claude
 relink ~/.claude/CLAUDE.md $DIR/CLAUDE.md
