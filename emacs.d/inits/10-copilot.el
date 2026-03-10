@@ -13,12 +13,12 @@
   (copilot-max-char-warning-disabled t)
   :hook (prog-mode . copilot-mode)
   :config
-  ;; TABキーでCopilotの補完を受け入れる関数
+  ;; TABキーでCopilotの補完を優先し、なければインデントを行う関数
   (defun my-copilot-tab ()
-    "Copilotの補完を優先的に受け入れ、なければcorfuの補完を行う"
+    "Copilotの補完を優先的に受け入れ、なければインデントを行う"
     (interactive)
     (or (copilot-accept-completion)
-        (completion-at-point)))
+        (indent-for-tab-command)))
 
   ;; prog-mode-mapでのみTABキーを設定
   (with-eval-after-load 'prog-mode

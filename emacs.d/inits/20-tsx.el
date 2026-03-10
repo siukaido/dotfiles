@@ -2,7 +2,8 @@
 
 ;;; Commentary:
 ;; tree-sitter ベースの JavaScript/TypeScript 統合開発環境
-;; eglot (LSP) + prettier + corfu による構成
+;; eglot (LSP) + corfu による構成
+;; フォーマットは npm scripts で手動実行
 ;;
 ;; 手動対応:
 ;;   1. tree-sitter grammar のインストール（初回のみ）
@@ -56,10 +57,6 @@
   (corfu-cycle t)
   (corfu-preview-current nil))
 
-;;;; prettier による自動フォーマット
-(use-package prettier-js
-  :hook ((typescript-ts-mode . prettier-js-mode)
-         (tsx-ts-mode        . prettier-js-mode)
-         (js-ts-mode         . prettier-js-mode)))
+;;;; 保存時の自動フォーマットは無効（npm scripts で手動実行する）
 
 ;;; 20-tsx.el ends here
