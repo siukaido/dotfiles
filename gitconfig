@@ -7,7 +7,7 @@
     st=status -s
     di=diff
     up=pull --rebase
-    patch=--no-pager diff --no-color
+    patch = !git --no-pager diff --no-color
 
     # logをtree表示
     log-graph = log --graph --date=short --pretty=format:'%h %cd %cn %s'
@@ -16,7 +16,13 @@
     ui = auto
 [core]
     pager = diff-so-fancy | less --tabs=4 -RFX
+[init]
+    defaultBranch = main
 [pull]
-	rebase = false
+    rebase = false
+[push]
+    default = current
+[fetch]
+    prune = true
 [grep]
-	lineNumber = true
+    lineNumber = true

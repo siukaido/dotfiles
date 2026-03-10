@@ -14,36 +14,41 @@ function share_history {
 PROMPT_COMMAND='share_history'
 shopt -u histappend
 
+# brew --prefix をキャッシュ（毎回呼ぶと遅い）
+if [ -z "$BREW_PREFIX" ] && hash brew 2>/dev/null; then
+    BREW_PREFIX="$(brew --prefix)"
+fi
+
 # enable color support of ls and also add handy aliases
-if [ -x $(brew --prefix)/bin/gdircolors ]; then
+if [ -n "$BREW_PREFIX" ] && [ -x "${BREW_PREFIX}/bin/gdircolors" ]; then
     if [ -f ~/.dir_colors ]; then
-        eval `gdircolors ~/.dir_colors`
+        eval "$(gdircolors ~/.dir_colors)"
     fi
     alias ls='gls --color=auto'
 else
     if [ -f ~/.dir_colors ]; then
-        eval `dircolors ~/.dir_colors`
+        eval "$(dircolors ~/.dir_colors)"
     fi
     alias ls='ls --color=auto'
 fi
 
 # brew で入れたものの設定読み込み
-if hash brew 2>/dev/null; then
+if [ -n "$BREW_PREFIX" ]; then
     # direnv
-    if [ -x $(brew --prefix)/bin/direnv ]; then
+    if [ -x "${BREW_PREFIX}/bin/direnv" ]; then
         eval "$(direnv hook bash)"
     else
         echo "does not exist direnv. plz install from brew"
     fi
     # thefuck
-    if [ -x $(brew --prefix)/bin/fuck ]; then
+    if [ -x "${BREW_PREFIX}/bin/fuck" ]; then
         eval "$(thefuck --alias)"
     else
         echo "does not exist thefuck. plz install from brew"
     fi
     # anyenv
-    if [ -x $(brew --prefix)/bin/anyenv ]; then
-        if [ -d $HOME/.anyenv ]; then
+    if [ -x "${BREW_PREFIX}/bin/anyenv" ]; then
+        if [ -d "$HOME/.anyenv" ]; then
             eval "$(anyenv init -)"
 
             # goenv
@@ -57,8 +62,8 @@ if hash brew 2>/dev/null; then
         echo "does not exist anyenv. plz install from brew"
     fi
     # bash_completion
-    if [ -f $(brew --prefix)/etc/profile.d/bash_completion.sh ]; then
-        . $(brew --prefix)/etc/profile.d/bash_completion.sh
+    if [ -f "${BREW_PREFIX}/etc/profile.d/bash_completion.sh" ]; then
+        . "${BREW_PREFIX}/etc/profile.d/bash_completion.sh"
         GIT_PS1_SHOWDIRTYSTATE=true # ファイル変更の有無
         GIT_PS1_SHOWSTASHSTATE=true # スタッシュの有無
         GIT_PS1_SHOWUNTRACKEDFILES=true # 新規ファイルの有無
@@ -66,11 +71,11 @@ if hash brew 2>/dev/null; then
         # GIT_PS1_SHOWCOLORHINTS=true # 表示内容のカラー化
     fi
     # google-cloud-sdk
-    if [ -f "$(brew --prefix)/share/google-cloud-sdk/path.bash.inc" ]; then
-        source "$(brew --prefix)/share/google-cloud-sdk/path.bash.inc"
+    if [ -f "${BREW_PREFIX}/share/google-cloud-sdk/path.bash.inc" ]; then
+        source "${BREW_PREFIX}/share/google-cloud-sdk/path.bash.inc"
     fi
-    if [ -f "$(brew --prefix)/share/google-cloud-sdk/completion.bash.inc" ]; then
-        source "$(brew --prefix)/share/google-cloud-sdk/completion.bash.inc"
+    if [ -f "${BREW_PREFIX}/share/google-cloud-sdk/completion.bash.inc" ]; then
+        source "${BREW_PREFIX}/share/google-cloud-sdk/completion.bash.inc"
     fi
 fi
 
@@ -88,7 +93,11 @@ xterm-color)
 esac
 
 # pnpm
-export PNPM_HOME="${HOME}/Library/pnpm"
+if [ "$(uname)" == "Darwin" ]; then
+    export PNPM_HOME="${HOME}/Library/pnpm"
+else
+    export PNPM_HOME="${HOME}/.local/share/pnpm"
+fi
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;

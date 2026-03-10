@@ -12,14 +12,14 @@ alias mv="mv -i"
 alias rm="rm -i"
 
 function chpwd() {
-    cd $1;
-    pwd;
+    builtin cd "$@"
+    pwd
 }
 alias cd="chpwd"
 alias e="emacs"
 alias bye="exit"
 alias quit="exit"
-alias rmds='sudo find /. -name ".DS_Store" -exec rm {} \;'
+alias rmds='find ~ -name ".DS_Store" -type f -delete'
 alias be="bundle exec"
 
 # git系

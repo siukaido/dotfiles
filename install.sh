@@ -28,16 +28,17 @@ relink ~/.inputrc      $DIR/inputrc
 relink ~/.screenrc     $DIR/screenrc
 relink ~/.tmux.conf    $DIR/tmux.conf
 relink ~/.emacs.d      $DIR/emacs.d
-mkdir ~/.claude
+mkdir -p ~/.claude
 relink ~/.claude/CLAUDE.md $DIR/CLAUDE.md
-relink ~/.bash_local "/Users/`whoami`/Library/Mobile Documents/com~apple~CloudDocs/work/0.dotfiles/bash_local"
-relink ~/.aws "/Users/`whoami`/Library/Mobile Documents/com~apple~CloudDocs/work/0.dotfiles/aws"
-relink ~/.ssh "/Users/`whoami`/Library/Mobile Documents/com~apple~CloudDocs/work/0.dotfiles/ssh"
-
-mkdir ~/.bundle
+mkdir -p ~/.bundle
 relink ~/.bundle/config $DIR/bundle/config
 
-if [ `uname` == "Darwin" ]; then
+if [ "$(uname)" == "Darwin" ]; then
+    # macOS 専用のシンボリックリンク（iCloud経由）
+    relink ~/.bash_local "/Users/$(whoami)/Library/Mobile Documents/com~apple~CloudDocs/work/0.dotfiles/bash_local"
+    relink ~/.aws "/Users/$(whoami)/Library/Mobile Documents/com~apple~CloudDocs/work/0.dotfiles/aws"
+    relink ~/.ssh "/Users/$(whoami)/Library/Mobile Documents/com~apple~CloudDocs/work/0.dotfiles/ssh"
+
     # Homebrew
     echo ""
     if hash brew 2>/dev/null; then
@@ -48,33 +49,31 @@ if [ `uname` == "Darwin" ]; then
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
     echo "Exec brew bundle"
-    brew tap Homebrew/bundle
     brew bundle
 
-    # anyenv
+    # anyenv（Brewfile でインストール済み）
     echo "Using anyenv"
     if [ ! -d ~/.anyenv ]; then
-        git clone https://github.com/riywo/anyenv ~/.anyenv
-        exec $SHELL -l
-        # anyenv update
-        mkdir -p $(anyenv root)/plugins
-        git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/any
+        anyenv init
+        mkdir -p "$(anyenv root)/plugins"
+        git clone https://github.com/znz/anyenv-update.git "$(anyenv root)/plugins/anyenv-update"
 
         anyenv install goenv
         anyenv install rbenv
-        anyenv install ndenv
+        anyenv install nodenv
         anyenv install phpenv
+        echo "anyenv の環境をインストールしました。シェルを再起動してください。"
     fi
-fi
 
-# App Store
-echo ""
-echo "application install from AppStore"
-## runcat
-mas install 1429033973
-## LINE
-mas install 539883307
-## 1Password for safari
-mas install 1569813296
-## Xcode
-mas install 497799835
+    # App Store
+    echo ""
+    echo "application install from AppStore"
+    ## runcat
+    mas install 1429033973
+    ## LINE
+    mas install 539883307
+    ## 1Password for safari
+    mas install 1569813296
+    ## Xcode
+    mas install 497799835
+fi
