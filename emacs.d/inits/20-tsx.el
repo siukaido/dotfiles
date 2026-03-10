@@ -34,28 +34,48 @@
 (setq tsx-ts-mode-indent-offset 2)
 
 ;;;; eglot (LSP)
+;; 診断は eglot → flycheck-eglot 経由で flycheck に表示
 (use-package eglot
   :hook ((typescript-ts-mode . eglot-ensure)
          (tsx-ts-mode        . eglot-ensure)
          (js-ts-mode         . eglot-ensure))
   :custom
-  ;; flycheck を使用するため flymake は無効化
   (eglot-stay-out-of '(flymake))
   :config
-  ;; eglot-stay-out-of だけでは flymake が残る場合があるため明示的に無効化
-  (add-hook 'eglot-managed-mode-hook (lambda () (flymake-mode -1)))
   (add-to-list 'eglot-server-programs
                '((typescript-ts-mode tsx-ts-mode js-ts-mode)
-                 "typescript-language-server" "--stdio")))
+                 "typescript-language-server" "--stdio"))
+  (add-hook 'eglot-managed-mode-hook
+            (lambda ()
+              (flymake-mode -1)
+              (eglot-inlay-hints-mode -1))))
 
-;;;; 補完UI
+;;;; eglot の診断を flycheck に流す
+(use-package flycheck-eglot
+  :after (flycheck eglot)
+  :config
+  (global-flycheck-eglot-mode 1))
+
+;;;; 補完UI（ターミナル Emacs 対応）
 (use-package corfu
-  :init
-  (global-corfu-mode)
+  :demand t
   :custom
   (corfu-auto t)
+  (corfu-auto-prefix 1)
+  (corfu-auto-delay 0.2)
   (corfu-cycle t)
-  (corfu-preview-current nil))
+  (corfu-preview-current nil)
+  :config
+  (global-corfu-mode))
+
+;; ターミナルで corfu のポップアップを表示するためのパッケージ
+(use-package corfu-terminal
+  :straight (:type git :host codeberg :repo "akib/emacs-corfu-terminal")
+  :unless (display-graphic-p)
+  :demand t
+  :after corfu
+  :config
+  (corfu-terminal-mode 1))
 
 ;;;; 保存時の自動フォーマットは無効（npm scripts で手動実行する）
 

@@ -23,11 +23,6 @@
                   json-jsonlint
                   javascript-jshint)))
 
-;;--------------------------------------------------------------------
-;; エラー行の直下にインライン表示
-;;--------------------------------------------------------------------
-(use-package flycheck-inline
-  :after flycheck
-  :hook (flycheck-mode . flycheck-inline-mode))
+;;; エラーはエコーエリア（ミニバッファ行）にカーソル合わせ時に表示
 
 ;;; 10-flycheck.el ends here
