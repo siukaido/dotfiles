@@ -1,4 +1,4 @@
-;;; auto-highlight-symbol.el -*- lexical-binding: t; -*- --- auto-highlight-symbol.el
+;;; 10-auto-highlight-symbol.el --- シンボル自動ハイライト -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; カーソルを合わせたシンボルを使用している箇所をハイライトするemacsパッケージ

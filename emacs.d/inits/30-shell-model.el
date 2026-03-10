@@ -1,4 +1,4 @@
-;;; 50-shell-model.el -*- lexical-binding: t; -*- --- シェルスクリプト関連ファイルの設定
+;;; 30-shell-model.el --- シェルスクリプト関連ファイルの設定 -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; bashrc、bash_profile、bash_aliasesなどの
@@ -9,4 +9,4 @@
 (add-to-list 'auto-mode-alist '("bash_profile$" . shell-script-mode))
 (add-to-list 'auto-mode-alist '("bash_aliases$" . shell-script-mode))
 
-;;; 50-shell-model.el ends here
+;;; 30-shell-model.el ends here

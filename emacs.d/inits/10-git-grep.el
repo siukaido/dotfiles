@@ -1,4 +1,4 @@
-;;; 20-git-grep.el -*- lexical-binding: t; -*- --- Gitリポジトリ内検索機能
+;;; 10-git-grep.el --- Gitリポジトリ内検索機能 -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; git-grepを使用したリポジトリ内高速検索
@@ -10,4 +10,4 @@
   :bind (;("C-x g g" . git-grep)
          ("C-x g g" . git-grep-repo)))
 
-;;; 20-git-grep.el ends here
+;;; 10-git-grep.el ends here

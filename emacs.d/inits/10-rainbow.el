@@ -1,4 +1,4 @@
-;;; rainbow.el -*- lexical-binding: t; -*- --- カラーコードの可視化
+;;; 10-rainbow.el --- カラーコードの可視化 -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; CSSやSCSS、HTMLファイルでカラーコードを実際の色で表示
@@ -10,4 +10,4 @@
   ;; 自動的に有効化するモードを追加
   (setq rainbow-html-colors t)
   (setq rainbow-x-colors t))
-;;; 40-rainbow.el ends here
+;;; 10-rainbow.el ends here

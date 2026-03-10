@@ -1,8 +1,9 @@
-;;; 50-ahk.el -*- lexical-binding: t; -*- --- AutoHotkey編集サポート
+;;; 30-ahk.el --- AutoHotkey編集サポート -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; AutoHotkeyスクリプト編集環境（遅延読み込み）
 ;; site-lispからahk-modeを読み込み
+;; Windows環境で使用
 
 ;;; Code:
 (use-package ahk-mode
@@ -11,4 +12,4 @@
   :load-path "~/.emacs.d/site-lisp/"
   :straight nil)  ; straight.elを使わない（ローカルファイル）
 
-;;; 50-ahk.el ends here
+;;; 30-ahk.el ends here

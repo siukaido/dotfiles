@@ -1,4 +1,4 @@
-;;; solidity.el -*- lexical-binding: t; -*- --- Solidityスマートコントラクト開発サポート
+;;; 30-solidity.el --- Solidityスマートコントラクト開発サポート -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; Ethereum/Solidityスマートコントラクト開発環境（遅延読み込み）

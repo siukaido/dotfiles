@@ -1,4 +1,4 @@
-;;; 00-settings.el -*- lexical-binding: t; -*- --- Emacs基本設定
+;;; 00-settings.el --- Emacs基本設定 -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; Emacsの基本的な動作設定

@@ -1,4 +1,4 @@
-;;; yaml.el -*- lexical-binding: t; -*- --- YAML設定
+;;; 20-yaml.el --- YAML設定 -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; YAMLファイルの編集環境設定
@@ -14,4 +14,4 @@
   ;; YAMLのインデント幅
   (yaml-indent-offset 2))
 
-;;; 50-yaml.el ends here
+;;; 20-yaml.el ends here

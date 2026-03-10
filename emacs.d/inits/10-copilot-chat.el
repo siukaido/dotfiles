@@ -1,4 +1,4 @@
-;;; copilot-chat.el -*- lexical-binding: t; -*- --- GitHub Copilot Chat設定
+;;; 10-copilot-chat.el --- GitHub Copilot Chat設定 -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; GitHub Copilot Chatの設定
@@ -29,7 +29,7 @@
 
     (setq my/copilot-chat-commit-prompt-original copilot-chat-commit-prompt)
     (setopt copilot-chat-commit-prompt
-            (concat "description には英語 body には日本語を用いる。また1行は66文字以内に収めること。ただし日本語は1文字を2文字換算とする\n" 
+            (concat "description には英語 body には日本語を用いる。また1行は66文字以内に収めること。ただし日本語は1文字を2文字換算とする\n"
                     my/copilot-chat-commit-prompt-original))))
 
 ;;; 10-copilot-chat.el ends here

@@ -1,4 +1,4 @@
-;;; init.el --- Emacs configuration
+;;; init.el --- Emacs configuration -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; Emacsの設定ファイル
@@ -31,7 +31,7 @@
 ;; 本来は (use-package hoge :straight t) のように書く必要がある
 (setq straight-use-package-by-default t)
 
-;; ~/.emacs.d/init/ 以下のファイルを全部読み込む
+;; ~/.emacs.d/inits/ 以下のファイルを全部読み込む
 (use-package init-loader
   :config
   (init-loader-load "~/.emacs.d/inits"))

@@ -1,4 +1,4 @@
-;;; dart.el -*- lexical-binding: t; -*- --- Dart言語サポート
+;;; 30-dart.el --- Dart言語サポート -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; Dart/Flutter開発環境の設定（遅延読み込み）

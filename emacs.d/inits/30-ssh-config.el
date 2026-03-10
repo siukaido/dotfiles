@@ -1,4 +1,4 @@
-;;; 50-ssh-config.el -*- lexical-binding: t; -*- --- SSH設定ファイル編集サポート
+;;; 30-ssh-config.el --- SSH設定ファイル編集サポート -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; SSH/SSHDの設定ファイル編集モード
@@ -12,4 +12,4 @@
          ("sshd?-config" . ssh-config-mode))
   :hook (ssh-config-mode . turn-on-font-lock))
 
-;;; 50-ssh-config.el ends here
+;;; 30-ssh-config.el ends here

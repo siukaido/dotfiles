@@ -1,4 +1,4 @@
-;;; apache.el -*- lexical-binding: t; -*- --- Apache設定ファイル編集サポート
+;;; 30-apache.el --- Apache設定ファイル編集サポート -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; Apache設定ファイルの編集モード（遅延読み込み）

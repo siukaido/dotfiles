@@ -1,4 +1,4 @@
-;;; whitespace.el -*- lexical-binding: t; -*- --- 空白文字の表示設定
+;;; 00-whitespace.el --- 空白文字の表示設定 -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; タブ、全角スペース、行末の空白などを可視化
@@ -22,9 +22,7 @@
    '((tab-mark   ?\t     [?\u00BB ?\t]) ; タブ → »
      ))
 
-  ;; タブ幅とインデント設定（グローバル）
-  (tab-width 4)
-  (indent-tabs-mode nil)
+  ;; tab-width, indent-tabs-mode は 00-settings.el で設定済み
 
   ;; 改行コードの表示
   (eol-mnemonic-dos "(CRLF)")
@@ -61,12 +59,6 @@
     (setq c-basic-offset tab-width))
   (add-hook 'c-mode-hook #'my-c-mode-hook)
 
-  ;; インデントして次の行に移動する関数
-  ;; (00-settings.elで定義済みなのでコメントアウト)
-  ;; (defun indent-and-next-line ()
-  ;;   (interactive)
-  ;;   (indent-according-to-mode)
-  ;;   (forward-line 1))
   )
 
-;;; 10-whitespace.el ends here
+;;; 00-whitespace.el ends here

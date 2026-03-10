@@ -1,9 +1,9 @@
-;;; atom-dark-theme.el --- Atom Dark theme -*- lexical-binding: t; -*-
+;;; 00-color-theme.el --- カラーテーマ設定 -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; カラーテーマの設定
 
-;;; Code
+;;; Code:
 ;; https://github.com/whitlockjc/atom-dark-theme-emacs
 (use-package atom-dark-theme
   :init
@@ -14,4 +14,4 @@
    '(which-func ((t (:foreground "#96CBFE" :weight bold)))))
   )
 
-;;; 10-color-theme.el ends here
+;;; 00-color-theme.el ends here

@@ -1,4 +1,4 @@
-;;; 40-prisma.el -*- lexical-binding: t; -*- --- Prismaスキーマファイル編集サポート
+;;; 30-prisma.el --- Prismaスキーマファイル編集サポート -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; Prisma ORMのスキーマファイル（.prisma）編集環境
@@ -14,4 +14,4 @@
   :custom
   (prisma-format-on-save t))
 
-;;; 40-prisma.el ends here
+;;; 30-prisma.el ends here

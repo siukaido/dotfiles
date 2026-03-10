@@ -1,4 +1,4 @@
-;;; 30-terraform.el -*- lexical-binding: t; -*- --- Terraform設定ファイル編集サポート
+;;; 30-terraform.el --- Terraform設定ファイル編集サポート -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; Terraformインフラ定義ファイルの編集環境

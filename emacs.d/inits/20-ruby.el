@@ -1,8 +1,7 @@
-;;; 30-ruby.el -*- lexical-binding: t; -*- --- Ruby開発環境設定
+;;; 20-ruby.el --- Ruby開発環境設定 -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; Ruby開発環境の設定
-;; RuboCopによるコード検証を有効化
 ;; マジックコメントの自動挿入は無効化
 
 ;;; Code:
@@ -12,4 +11,4 @@
   :config
   (setq ruby-insert-encoding-magic-comment nil))
 
-;;; 30-ruby.el ends here
+;;; 20-ruby.el ends here

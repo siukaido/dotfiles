@@ -1,4 +1,4 @@
-;;; perl.el -*- lexical-binding: t; -*- --- Perl言語サポート
+;;; 30-perl.el --- Perl言語サポート -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; Perl開発環境の設定（遅延読み込み）
