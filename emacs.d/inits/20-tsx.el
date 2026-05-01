@@ -33,6 +33,31 @@
 (setq typescript-ts-mode-indent-offset 2)
 (setq tsx-ts-mode-indent-offset 2)
 
+;;;; tsx-ts-mode の JSX indent rule 修正
+;; 内蔵 tsx-ts-mode のデフォルト rule では JSX 関連 anchor が `parent'
+;; (親ノード開始位置の column) になっているため、属性が多い JSX タグで
+;; C-i すると子要素が深い列にずれることがある (Emacs bug #64698 系)
+;; anchor を `parent-bol' に書き換えて親ノード行頭起点に揃える
+(defun my/tsx-ts-mode-fix-jsx-indent ()
+  "tsx-ts-mode の JSX 用 indent rule の anchor を `parent-bol' に揃える"
+  (setq-local
+   treesit-simple-indent-rules
+   (mapcar
+    (lambda (lang-rules)
+      (cons (car lang-rules)
+            (mapcar
+             (lambda (rule)
+               (if (and (consp rule)
+                        (>= (length rule) 3)
+                        (eq (nth 1 rule) 'parent)
+                        (string-match-p "jsx" (format "%S" (car rule))))
+                   (list (car rule) 'parent-bol (nth 2 rule))
+                 rule))
+             (cdr lang-rules))))
+    treesit-simple-indent-rules)))
+
+(add-hook 'tsx-ts-mode-hook #'my/tsx-ts-mode-fix-jsx-indent)
+
 ;;;; eglot (LSP)
 ;; 診断は eglot → flycheck-eglot 経由で flycheck に表示
 (use-package eglot
