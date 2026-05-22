@@ -70,6 +70,10 @@
   (add-to-list 'eglot-server-programs
                '((typescript-ts-mode tsx-ts-mode js-ts-mode)
                  "typescript-language-server" "--stdio"))
+  ;; import 補完などで挿入されるクォートをシングルクォートに統一
+  (setq-default eglot-workspace-configuration
+                '(:typescript (:preferences (:quoteStyle "single"))
+                  :javascript (:preferences (:quoteStyle "single"))))
   (add-hook 'eglot-managed-mode-hook
             (lambda ()
               (flymake-mode -1)
@@ -91,7 +95,21 @@
   (corfu-cycle t)
   (corfu-preview-current nil)
   :config
-  (global-corfu-mode))
+  (global-corfu-mode)
+
+  ;; バッファ/ウィンドウ切り替え時に corfu の popup を確実に閉じる
+  ;; (特に corfu-terminal-mode で popon が残る対策)
+  (defun my/corfu-quit-on-window-change (&rest _)
+    "ウィンドウやバッファが切り替わった時に corfu の popup を閉じる"
+    (when (and (bound-and-true-p corfu-mode)
+               (or (and (boundp 'corfu--frame)
+                        (frame-live-p corfu--frame))
+                   (and (boundp 'corfu-terminal--popon)
+                        corfu-terminal--popon)))
+      (corfu-quit)))
+
+  (add-hook 'window-buffer-change-functions #'my/corfu-quit-on-window-change)
+  (add-hook 'window-selection-change-functions #'my/corfu-quit-on-window-change))
 
 ;; ターミナルで corfu のポップアップを表示するためのパッケージ
 (use-package corfu-terminal
