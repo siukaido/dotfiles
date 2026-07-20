@@ -68,8 +68,8 @@ if [ "$(uname)" == "Darwin" ]; then
     # App Store
     echo ""
     echo "application install from AppStore"
-    ## runcat
-    mas install 1429033973
+    ## runcat neo
+    mas install 6757801838
     ## LINE
     mas install 539883307
     ## 1Password for safari
