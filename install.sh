@@ -30,6 +30,12 @@ relink ~/.tmux.conf    $DIR/tmux.conf
 relink ~/.emacs.d      $DIR/emacs.d
 mkdir -p ~/.claude
 relink ~/.claude/CLAUDE.md $DIR/CLAUDE.md
+relink ~/.claude/settings.json $DIR/claude/settings.json
+relink ~/.claude/statusline-command.sh $DIR/claude/statusline-command.sh
+relink ~/.claude/subagent-statusline.sh $DIR/claude/subagent-statusline.sh
+mkdir -p ~/.claude/skills
+relink ~/.claude/skills/crlf-to-lf-converter $DIR/claude/skills/crlf-to-lf-converter
+relink ~/.claude/skills/dependabot-pr-reviewer $DIR/claude/skills/dependabot-pr-reviewer
 mkdir -p ~/.bundle
 relink ~/.bundle/config $DIR/bundle/config
 
