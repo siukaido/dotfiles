@@ -8,8 +8,8 @@ model=$(echo "$input" | jq -r '.model.display_name // "?"')
 cwd=$(echo "$input" | jq -r '.workspace.current_dir // .cwd')
 display_dir=$(echo "$cwd" | sed "s|^$HOME|~|")
 
-# コンテキスト残量（%）
-ctx_remain=$(echo "$input" | jq -r '.context_window.remaining_percentage // "-"' | cut -d. -f1)
+# コンテキスト使用量（%）
+ctx_used=$(echo "$input" | jq -r '.context_window.used_percentage // "-"' | cut -d. -f1)
 
 # レート制限（5時間 / 7日）
 rate_5h=$(echo "$input" | jq -r '.rate_limits.five_hour.used_percentage // "-"' | cut -d. -f1)
@@ -28,5 +28,5 @@ rate_color() {
 }
 
 RST="\033[0m"
-printf "\033[0;35m%s${RST} \033[0;32m%s${RST} ctx:%s%% %s5h:%s%%${RST} %s7d:%s%%${RST}" \
-       "$model" "$display_dir" "$ctx_remain" "$(rate_color "$rate_5h")" "$rate_5h" "$(rate_color "$rate_7d")" "$rate_7d"
+printf "\033[0;35m%s${RST} \033[0;32m%s${RST} %sctx:%s%%${RST} %s5h:%s%%${RST} %s7d:%s%%${RST}" \
+       "$model" "$display_dir" "$(rate_color "$ctx_used")" "$ctx_used" "$(rate_color "$rate_5h")" "$rate_5h" "$(rate_color "$rate_7d")" "$rate_7d"
