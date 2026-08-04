@@ -78,7 +78,6 @@ cask "font-hackgen-nerd"            # HackGen の Nerd Fonts アイコン入り�
 cask "google-chrome"                # Web ブラウザ
 cask "gcloud-cli"                   # GCP の CLI（gcloud）
 cask "ghostty"                      # ターミナルエミュレータ
-cask "iterm2"                       # 高機能ターミナルエミュレータ
 cask "notion"                       # ドキュメント・メモ管理アプリ
 cask "postman"                      # API 開発・テストツール
 cask "raycast"                      # ランチャーアプリ
