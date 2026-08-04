@@ -28,6 +28,8 @@ relink ~/.inputrc      $DIR/inputrc
 relink ~/.screenrc     $DIR/screenrc
 relink ~/.tmux.conf    $DIR/tmux.conf
 relink ~/.emacs.d      $DIR/emacs.d
+mkdir -p ~/.codex
+relink ~/.codex/AGENTS.md $DIR/CLAUDE.md # codexもclaudeと同等の設定を使うため
 mkdir -p ~/.claude
 relink ~/.claude/CLAUDE.md $DIR/CLAUDE.md
 relink ~/.claude/settings.json $DIR/claude/settings.json

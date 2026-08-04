@@ -74,6 +74,7 @@ cask "adobe-acrobat-reader"         # PDF 閲覧アプリ
 cask "appcleaner"                   # アプリの完全アンインストールツール
 cask "choosy"                       # リンクを開くブラウザを振り分けるツール
 cask "claude-code@latest"           # Claude Code
+cask "codex"                        # Codex
 cask "discord"                      # チャット・通話アプリ
 cask "dropbox"                      # クラウドストレージ
 cask "flutter"                      # クロスプラットフォームアプリ開発 SDK
