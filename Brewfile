@@ -5,7 +5,6 @@ brew "aqua"                         # CLI ツールのバージョン管理ツ�
 brew "awscli"                       # AWS 公式 CLI
 brew "bash"                         # Bash シェル（macOS 標準より新しいバージョン）
 brew "bash-completion@2"            # Bash の補完機能拡張
-brew "cmatrix"                      # ターミナルにマトリックス風の表示を流すジョークツール
 brew "cocoapods"                    # iOS/macOS 用ライブラリ管理ツール
 brew "colima"                       # コンテナランタイム（Docker Desktop の代替）
 brew "coreutils"                    # GNU 版の基本コマンド群（ls, date 等）
@@ -25,7 +24,6 @@ brew "go"                           # Go 言語
 brew "golangci-lint"                # Go の統合 linter
 brew "grep"                         # GNU 版 grep
 brew "grpcurl"                      # gRPC サーバーに curl 感覚でリクエストするツール
-brew "gti"                          # git の typo で車が走るジョークツール
 brew "helm"                         # Kubernetes のパッケージマネージャー
 brew "htop"                         # 高機能なプロセスモニター
 brew "ideviceinstaller"             # iOS デバイスへのアプリインストールツール
@@ -50,7 +48,6 @@ brew "pwgen"                        # パスワード生成ツール
 brew "redis"                        # インメモリ KVS
 brew "ruby-build", args: ["HEAD"]   # rbenv 用の Ruby ビルドプラグイン
 brew "saml2aws"                     # SAML 認証で AWS の一時認証情報を取得
-brew "sl"                           # ls の typo で SL が走るジョークツール
 brew "sops"                         # 秘密情報ファイルの暗号化ツール
 brew "stern"                        # Kubernetes の複数 Pod ログを同時表示
 brew "tig"                          # git リポジトリ閲覧用 TUI
@@ -62,6 +59,13 @@ brew "wget"                         # ファイルダウンロードツール
 brew "ykman"                        # YubiKey 管理 CLI
 brew "tbls"                         # データベースのドキュメント自動生成ツール
 brew "eksctl"                       # Amazon EKS クラスタ管理 CLI
+
+# ジョークツール
+brew "asciiquarium"                 # ターミナルが水族館になるジョークツール
+brew "cbonsai"                      # 盆栽が育つジョークツール
+brew "cmatrix"                      # ターミナルにマトリックス風の表示を流すジョークツール
+brew "gti"                          # git の typo で車が走るジョークツール
+brew "sl"                           # ls の typo で SL が走るジョークツール
 
 #--------------------------------------------------------------------
 # cask
