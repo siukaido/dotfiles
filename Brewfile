@@ -39,6 +39,7 @@ brew "lv"                           # 多言語対応ページャー
 brew "mas"                          # Mac App Store の CLI
 brew "mkcert"                       # ローカル開発用の証明書作成ツール
 brew "mysql"                        # リレーショナルデータベース
+brew "mysql-client@8.0"             # MySQL クライアント（mysql2 gem のビルドに必要。DB 本体は Docker）
 brew "nginx"                        # Web サーバー・リバースプロキシ
 brew "nkf"                          # 文字コード変換ツール
 brew "nmap"                         # ネットワークスキャン・ポート調査ツール
@@ -56,6 +57,7 @@ brew "stern"                        # Kubernetes の複数 Pod ログを同時�
 brew "tig"                          # git リポジトリ閲覧用 TUI
 brew "tmux"                         # ターミナルマルチプレクサ
 brew "tree"                         # ディレクトリ構造をツリー表示
+brew "vips"                         # 画像処理ライブラリ（ruby-vips gem に必要）
 brew "watch"                        # コマンドを定期実行して結果を表示
 brew "wget"                         # ファイルダウンロードツール
 brew "ykman"                        # YubiKey 管理 CLI
@@ -68,7 +70,7 @@ brew "eksctl"                       # Amazon EKS クラスタ管理 CLI
 cask "adobe-acrobat-reader"         # PDF 閲覧アプリ
 cask "appcleaner"                   # アプリの完全アンインストールツール
 cask "choosy"                       # リンクを開くブラウザを振り分けるツール
-cask "coteditor"                    # 軽量テキストエディタ
+cask "claude-code@latest"           # Claude Code
 cask "discord"                      # チャット・通話アプリ
 cask "dropbox"                      # クラウドストレージ
 cask "flutter"                      # クロスプラットフォームアプリ開発 SDK
@@ -91,3 +93,6 @@ mas "RunCat Neo", id: 6757801838             # メニューバーで猫が走る
 mas "LINE", id: 539883307                    # メッセージアプリ
 mas "1Password for Safari", id: 1569813296   # Safari 用の 1Password 拡張
 mas "Xcode", id: 497799835                   # Apple 公式の開発 IDE
+mas "CotEditor", id: 1024640650              # 軽量テキストエディタ
+mas "Keynote", id: 409183694                 # Apple 純正プレゼンテーションアプリ
+mas "Numbers", id: 409203825                 # Apple 純正表計算アプリ

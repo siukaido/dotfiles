@@ -49,3 +49,11 @@ confirm-close-surface = always
 # cursor-style のデフォルトは block だが、シェル統合の cursor 機能が
 # プロンプト時に縦棒（bar）へ上書きするため、その機能だけ無効化する
 shell-integration-features = no-cursor
+
+# 新しいタブ・ウィンドウを常にホームディレクトリで開く
+# 継承設定はウィンドウ・タブ・分割ペインで別々（1.3.0 から分離された）
+# 分割ペインだけは現在のディレクトリを引き継ぐ挙動を残している
+window-inherit-working-directory = false
+tab-inherit-working-directory = false
+working-directory = home
+cursor-style-blink = false
