@@ -40,12 +40,6 @@ if [ -n "$BREW_PREFIX" ]; then
     else
         echo "does not exist direnv. plz install from brew"
     fi
-    # thefuck
-    if [ -x "${BREW_PREFIX}/bin/fuck" ]; then
-        eval "$(thefuck --alias)"
-    else
-        echo "does not exist thefuck. plz install from brew"
-    fi
     # anyenv
     if [ -x "${BREW_PREFIX}/bin/anyenv" ]; then
         if [ -d "$HOME/.anyenv" ]; then

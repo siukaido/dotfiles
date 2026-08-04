@@ -70,16 +70,4 @@ if [ "$(uname)" == "Darwin" ]; then
         anyenv install phpenv
         echo "anyenv の環境をインストールしました。シェルを再起動してください。"
     fi
-
-    # App Store
-    echo ""
-    echo "application install from AppStore"
-    ## runcat neo
-    mas install 6757801838
-    ## LINE
-    mas install 539883307
-    ## 1Password for safari
-    mas install 1569813296
-    ## Xcode
-    mas install 497799835
 fi
