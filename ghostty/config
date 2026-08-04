@@ -1,0 +1,51 @@
+# Ghostty 設定ファイル
+# 配置場所: ~/.config/ghostty/config（install.sh でシンボリックリンクを張る）
+# 反映方法: Cmd+Shift+, で再読み込み、または Ghostty を再起動
+# 全設定項目の確認: /Applications/Ghostty.app/Contents/MacOS/ghostty +show-config --default --docs
+
+# 起動シェル
+# Ghostty は未設定だと macOS のログインシェル（zsh）を起動するため、
+# Homebrew 版 bash をログインシェル（--login で ~/.bash_profile を読む）として明示する
+command = /opt/homebrew/bin/bash --login
+
+# $SHELL 環境変数も bash に向ける
+# （未設定だと OS のログインシェル /bin/zsh が入ったままになり、
+#   tmux など $SHELL を参照するツールが zsh を起動してしまう）
+env = SHELL=/opt/homebrew/bin/bash
+
+# フォント
+font-family = HackGen Console NF
+font-size = 14
+
+# 行間を少し広げる（セルの高さを元の値から 10% 増やす。文字はセル内で上下センタリングされる）
+# 数値指定（例: 2 で 2px 増）も可能。広すぎ/狭すぎは % を調整する
+adjust-cell-height = 10%
+
+# カラーテーマ（iTerm2 のデフォルト配色。背景色・ANSI 16 色が iTerm2 と同じになる）
+# テーマ一覧: ghostty +list-themes
+theme = iTerm2 Default
+
+# ウィンドウの半透明化と背景ぼかし
+# opacity は 0（透明）〜 1（不透明）。macOS では変更後に Ghostty の完全再起動が必要
+background-opacity = 0.70
+
+# 明示的な背景色を持つセルにも透過を適用する
+# （emacs や vim 等は全セルに背景色を塗るため、これがないと不透明に見える）
+background-opacity-cells = true
+
+# マウスで範囲選択したら自動でシステムのクリップボードへコピー（iTerm2 と同じ挙動）
+# デフォルトの true は選択用クリップボードにしか入らず Cmd+V で貼れないため clipboard を指定
+copy-on-select = clipboard
+
+# タブバーをタイトルバーに統合して常時表示する（タブが 1 個の時も表示される）
+# Linux 用の window-show-tab-bar = always は macOS 非対応のため、こちらで実現する
+macos-titlebar-style = tabs
+
+# 終了・クローズ時に必ず確認ダイアログを出す
+# デフォルトの true は実行中プロセスがある時のみ確認。always は待機中のシェルでも必ず確認する
+confirm-close-surface = always
+
+# カーソルをブロックにする
+# cursor-style のデフォルトは block だが、シェル統合の cursor 機能が
+# プロンプト時に縦棒（bar）へ上書きするため、その機能だけ無効化する
+shell-integration-features = no-cursor

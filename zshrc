@@ -41,12 +41,6 @@ if (( $+commands[brew] )); then
     else
         echo "does not exist direnv. plz install from brew"
     fi
-    # thefuck
-    if [[ -x $(brew --prefix)/bin/fuck ]]; then
-        eval "$(thefuck --alias)"
-    else
-        echo "does not exist thefuck. plz install from brew"
-    fi
     # anyenv
     if [[ -x $(brew --prefix)/bin/anyenv ]]; then
         if [[ -d $HOME/.anyenv ]]; then

@@ -38,6 +38,8 @@ relink ~/.claude/skills/crlf-to-lf-converter $DIR/claude/skills/crlf-to-lf-conve
 relink ~/.claude/skills/dependabot-pr-reviewer $DIR/claude/skills/dependabot-pr-reviewer
 mkdir -p ~/.bundle
 relink ~/.bundle/config $DIR/bundle/config
+mkdir -p ~/.config
+relink ~/.config/ghostty $DIR/ghostty
 
 if [ "$(uname)" == "Darwin" ]; then
     # macOS 専用のシンボリックリンク（iCloud経由）
