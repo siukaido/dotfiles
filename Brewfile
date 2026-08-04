@@ -93,5 +93,6 @@ mas "LINE", id: 539883307                    # メッセージアプリ
 mas "1Password for Safari", id: 1569813296   # Safari 用の 1Password 拡張
 mas "Xcode", id: 497799835                   # Apple 公式の開発 IDE
 mas "CotEditor", id: 1024640650              # 軽量テキストエディタ
-mas "Keynote", id: 409183694                 # Apple 純正プレゼンテーションアプリ
-mas "Numbers", id: 409203825                 # Apple 純正表計算アプリ
+mas "Keynote", id: 361285480                 # Apple 純正プレゼンテーションアプリ
+mas "Numbers", id: 361304891                 # Apple 純正表計算アプリ
+mas "Pages", id: 361309726                   # Apple 純正ドキュメンテーションアプリ
