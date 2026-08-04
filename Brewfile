@@ -5,7 +5,6 @@ brew "aqua"                         # CLI ツールのバージョン管理ツ�
 brew "awscli"                       # AWS 公式 CLI
 brew "bash"                         # Bash シェル（macOS 標準より新しいバージョン）
 brew "bash-completion@2"            # Bash の補完機能拡張
-brew "bash-git-prompt"              # Bash プロンプトに git 状態を表示
 brew "cmatrix"                      # ターミナルにマトリックス風の表示を流すジョークツール
 brew "cocoapods"                    # iOS/macOS 用ライブラリ管理ツール
 brew "colima"                       # コンテナランタイム（Docker Desktop の代替）
