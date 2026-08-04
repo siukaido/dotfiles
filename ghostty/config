@@ -57,3 +57,6 @@ window-inherit-working-directory = false
 tab-inherit-working-directory = false
 working-directory = home
 cursor-style-blink = false
+
+# 新しいタブを「今のタブの隣」ではなくタブリストの末尾に追加する
+window-new-tab-position = end
