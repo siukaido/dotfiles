@@ -67,6 +67,16 @@ if [ -n "$BREW_PREFIX" ]; then
     # fzf (Ctrl-R: あいまい履歴検索, Ctrl-T: ファイルパス挿入, Alt-C: ディレクトリ移動)
     if [ -x "${BREW_PREFIX}/bin/fzf" ]; then
         eval "$(fzf --bash)"
+        # fd を検索エンジンにする (.gitignore を尊重、隠しファイルも対象)
+        if [ -x "${BREW_PREFIX}/bin/fd" ]; then
+            export FZF_DEFAULT_COMMAND='fd --type f --hidden --exclude .git'
+            export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+            export FZF_ALT_C_COMMAND='fd --type d --hidden --exclude .git'
+        fi
+        # Ctrl-T の候補に bat でプレビューを表示
+        if [ -x "${BREW_PREFIX}/bin/bat" ]; then
+            export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=numbers --line-range=:200 {}'"
+        fi
     fi
     # google-cloud-sdk
     if [ -f "${BREW_PREFIX}/share/google-cloud-sdk/path.bash.inc" ]; then

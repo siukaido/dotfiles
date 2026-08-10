@@ -5,6 +5,7 @@ brew "aqua"                         # CLI ツールのバージョン管理ツ�
 brew "awscli"                       # AWS 公式 CLI
 brew "bash"                         # Bash シェル（macOS 標準より新しいバージョン）
 brew "bash-completion@2"            # Bash の補完機能拡張
+brew "bat"                          # シンタックスハイライト付き cat（fzf のプレビューにも使用）
 brew "cocoapods"                    # iOS/macOS 用ライブラリ管理ツール
 brew "colima"                       # コンテナランタイム（Docker Desktop の代替）
 brew "coreutils"                    # GNU 版の基本コマンド群（ls, date 等）
@@ -13,6 +14,7 @@ brew "direnv"                       # ディレクトリごとに環境変数を
 brew "docker"                       # Docker CLI
 brew "docker-compose"               # 複数コンテナをまとめて管理するツール
 brew "emacs"                        # テキストエディタ
+brew "fd"                           # find の現代版（fzf の検索エンジンにも使用）
 brew "ffmpeg"                       # 動画・音声の変換ツール
 brew "fzf"                          # コマンドラインのあいまい検索ツール
 brew "gh"                           # GitHub 公式 CLI
@@ -46,6 +48,7 @@ brew "pandoc"                       # ドキュメント形式変換ツール（
 brew "pre-commit"                   # git コミット前フックの管理ツール
 brew "pwgen"                        # パスワード生成ツール
 brew "redis"                        # インメモリ KVS
+brew "ripgrep"                      # grep の爆速版（.gitignore を尊重するコード検索）
 brew "ruby-build", args: ["HEAD"]   # rbenv 用の Ruby ビルドプラグイン
 brew "saml2aws"                     # SAML 認証で AWS の一時認証情報を取得
 brew "sops"                         # 秘密情報ファイルの暗号化ツール
