@@ -49,6 +49,7 @@ brew "redis"                        # インメモリ KVS
 brew "ruby-build", args: ["HEAD"]   # rbenv 用の Ruby ビルドプラグイン
 brew "saml2aws"                     # SAML 認証で AWS の一時認証情報を取得
 brew "sops"                         # 秘密情報ファイルの暗号化ツール
+brew "starship"                     # クロスシェル対応のプロンプト（bash/zsh 共通設定）
 brew "stern"                        # Kubernetes の複数 Pod ログを同時表示
 brew "tig"                          # git リポジトリ閲覧用 TUI
 brew "tmux"                         # ターミナルマルチプレクサ

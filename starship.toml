@@ -1,0 +1,59 @@
+# starship プロンプト設定（bash / zsh 共通）
+# 旧 PS1 の2行構成を踏襲しつつ、ランタイムバージョン・実行時間・exit code 表示を追加
+#   user@host:~/path via ⬢ v22.0.0 took 3s
+#   10:30 AM (main) [*+] $
+
+format = """
+$username$hostname$directory$nodejs$golang$ruby$python$gcloud$cmd_duration
+$time$git_branch$git_status$character"""
+
+# ユーザー名は常に表示（デフォルトは root / SSH 接続時のみ）
+[username]
+show_always = true
+style_user = "bold green"
+style_root = "bold red"
+format = "[$user]($style)"
+
+[hostname]
+ssh_only = false
+style = "bold green"
+format = "[@$hostname]($style):"
+
+# パスは省略せずフル表示（旧 \w 相当）
+[directory]
+style = "bold yellow"
+truncation_length = 100
+truncate_to_repo = false
+
+[time]
+disabled = false
+style = "bold green"
+format = "[$time]($style) "
+time_format = "%I:%M %p"
+
+# ブランチ名は旧 __git_ps1 と同じ赤の () 表示
+[git_branch]
+style = "red"
+format = '[\($branch\)]($style) '
+
+# 変更状態: * = 未ステージ, + = ステージ済み, ? = 未追跡, $ = stash
+# ⇡⇣ で upstream との ahead/behind も表示（旧 PS1 になかった機能）
+[git_status]
+style = "red"
+modified = "*"
+
+# 2秒以上かかったコマンドの実行時間を表示
+[cmd_duration]
+min_time = 2000
+
+# 旧プロンプトと同じ $ 表示。直前のコマンドが失敗すると赤くなる
+[character]
+success_symbol = '[\$](bold)'
+error_symbol = '[\$](bold red)'
+
+# gcloud のアクティブプロジェクト表示。常時表示でうるさいのでデフォルト無効
+# 必要になったら disabled = false にする
+[gcloud]
+disabled = true
+format = '[\[$symbol$project\]]($style) '
+style = "bold blue"

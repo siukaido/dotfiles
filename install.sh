@@ -42,6 +42,7 @@ mkdir -p ~/.bundle
 relink ~/.bundle/config $DIR/bundle/config
 mkdir -p ~/.config
 relink ~/.config/ghostty $DIR/ghostty
+relink ~/.config/starship.toml $DIR/starship.toml
 
 if [ "$(uname)" == "Darwin" ]; then
     # macOS 専用のシンボリックリンク（iCloud経由）

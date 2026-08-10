@@ -86,6 +86,18 @@ xterm-color)
     ;;
 esac
 
+# starship プロンプト (インストール済みなら上の PS1 を置き換える。設定は ~/.config/starship.toml)
+if hash starship 2>/dev/null; then
+    case "$TERM" in
+    xterm-256color|xterm-ghostty)
+        # screen の shelltitle 検出用エスケープ (旧 PS1 の \033k\033\\ を移植)
+        __screen_title_escape() { printf '\033k\033\\'; }
+        PROMPT_COMMAND="__screen_title_escape;${PROMPT_COMMAND}"
+        ;;
+    esac
+    eval "$(starship init bash)"
+fi
+
 # pnpm
 if [ "$(uname)" == "Darwin" ]; then
     export PNPM_HOME="${HOME}/Library/pnpm"

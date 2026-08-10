@@ -65,20 +65,24 @@ if (( $+commands[brew] )); then
     fi
 fi
 
-# vcs_info (git ブランチ表示)
-autoload -Uz vcs_info
-precmd() { vcs_info }
-zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr '+'
-zstyle ':vcs_info:git:*' unstagedstr '*'
-zstyle ':vcs_info:git:*' formats '(%b%u%c)'
-zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c)'
+# プロンプト設定 (starship があれば使い、なければ従来の vcs_info プロンプト)
+if (( $+commands[starship] )); then
+    eval "$(starship init zsh)"
+else
+    # vcs_info (git ブランチ表示)
+    autoload -Uz vcs_info
+    precmd() { vcs_info }
+    zstyle ':vcs_info:git:*' check-for-changes true
+    zstyle ':vcs_info:git:*' stagedstr '+'
+    zstyle ':vcs_info:git:*' unstagedstr '*'
+    zstyle ':vcs_info:git:*' formats '(%b%u%c)'
+    zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c)'
 
-# プロンプト設定
-# user@host:~/path
-# 10:30 AM(main*+) $
-PROMPT='%B%F{green}%n@%m%f%b:%B%F{yellow}%~%f%b
+    # user@host:~/path
+    # 10:30 AM(main*+) $
+    PROMPT='%B%F{green}%n@%m%f%b:%B%F{yellow}%~%f%b
 %B%F{green}%@%f%b%F{red}${vcs_info_msg_0_}%f $ '
+fi
 
 # cd 後に pwd を表示 (zsh の chpwd フックを使用)
 chpwd() {
