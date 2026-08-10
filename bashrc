@@ -64,6 +64,10 @@ if [ -n "$BREW_PREFIX" ]; then
         # GIT_PS1_SHOWUPSTREAM=true # HEAD とそのアップストリームの違い
         # GIT_PS1_SHOWCOLORHINTS=true # 表示内容のカラー化
     fi
+    # fzf (Ctrl-R: あいまい履歴検索, Ctrl-T: ファイルパス挿入, Alt-C: ディレクトリ移動)
+    if [ -x "${BREW_PREFIX}/bin/fzf" ]; then
+        eval "$(fzf --bash)"
+    fi
     # google-cloud-sdk
     if [ -f "${BREW_PREFIX}/share/google-cloud-sdk/path.bash.inc" ]; then
         source "${BREW_PREFIX}/share/google-cloud-sdk/path.bash.inc"

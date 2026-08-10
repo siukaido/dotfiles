@@ -56,6 +56,10 @@ if (( $+commands[brew] )); then
     else
         echo "does not exist anyenv. plz install from brew"
     fi
+    # fzf (Ctrl-R: あいまい履歴検索, Ctrl-T: ファイルパス挿入, Alt-C: ディレクトリ移動)
+    if [[ -x $(brew --prefix)/bin/fzf ]]; then
+        source <(fzf --zsh)
+    fi
     # google-cloud-sdk
     if [[ -f "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc" ]]; then
         source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
