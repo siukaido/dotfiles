@@ -1,0 +1,11 @@
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+
+[sandbox_workspace_write]
+network_access = true
+
+[projects."/Users/siukaido/work/private/dotfiles"]
+trust_level = "trusted"
+
+[projects."/Users/siukaido/work/private/jleage_referee"]
+trust_level = "trusted"
