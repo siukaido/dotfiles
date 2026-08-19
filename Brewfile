@@ -34,6 +34,7 @@ brew "ios-deploy"                   # iOS 実機へのアプリデプロイツ�
 brew "jq"                           # JSON 加工・整形ツール
 brew "kubernetes-cli"               # kubectl（Kubernetes 操作 CLI）
 brew "kustomize"                    # Kubernetes マニフェストのカスタマイズツール
+brew "lefthook"                     # git フック管理ツール（RoR プロジェクト等で使用）
 brew "lv"                           # 多言語対応ページャー
 brew "mas"                          # Mac App Store の CLI
 brew "mkcert"                       # ローカル開発用の証明書作成ツール

@@ -39,6 +39,11 @@ relink ~/.claude/subagent-statusline.sh $DIR/claude/subagent-statusline.sh
 mkdir -p ~/.claude/skills
 relink ~/.claude/skills/crlf-to-lf-converter $DIR/claude/skills/crlf-to-lf-converter
 relink ~/.claude/skills/dependabot-pr-reviewer $DIR/claude/skills/dependabot-pr-reviewer
+mkdir -p ~/.claude/agents
+relink ~/.claude/agents/tester.md $DIR/claude/agents/tester.md
+relink ~/.claude/agents/security-reviewer.md $DIR/claude/agents/security-reviewer.md
+relink ~/.claude/agents/researcher.md $DIR/claude/agents/researcher.md
+relink ~/.claude/agents/doc-writer.md $DIR/claude/agents/doc-writer.md
 mkdir -p ~/.bundle
 relink ~/.bundle/config $DIR/bundle/config
 mkdir -p ~/.config
