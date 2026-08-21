@@ -60,3 +60,10 @@ cursor-style-blink = false
 
 # 新しいタブを「今のタブの隣」ではなくタブリストの末尾に追加する
 window-new-tab-position = end
+
+# Ctrl-i / Ctrl-m / Ctrl-[ を従来端末と同じ制御文字（Tab / CR / ESC）で送る
+# Ghostty は既定で fixterms 仕様に従い、この 3 つだけ CSI u 形式（ESC[105;5u 等）で送るため、
+# Emacs 30 の xterm.el などが解釈できず「5;5u」のような文字列が挿入されてしまう
+keybind = ctrl+i=text:\t
+keybind = ctrl+m=text:\r
+keybind = ctrl+[=text:\x1b
