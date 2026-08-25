@@ -98,27 +98,18 @@
   (global-corfu-mode)
 
   ;; バッファ/ウィンドウ切り替え時に corfu の popup を確実に閉じる
-  ;; (特に corfu-terminal-mode で popon が残る対策)
   (defun my/corfu-quit-on-window-change (&rest _)
     "ウィンドウやバッファが切り替わった時に corfu の popup を閉じる"
     (when (and (bound-and-true-p corfu-mode)
-               (or (and (boundp 'corfu--frame)
-                        (frame-live-p corfu--frame))
-                   (and (boundp 'corfu-terminal--popon)
-                        corfu-terminal--popon)))
+               (boundp 'corfu--frame)
+               (frame-live-p corfu--frame))
       (corfu-quit)))
 
   (add-hook 'window-buffer-change-functions #'my/corfu-quit-on-window-change)
   (add-hook 'window-selection-change-functions #'my/corfu-quit-on-window-change))
 
-;; ターミナルで corfu のポップアップを表示するためのパッケージ
-(use-package corfu-terminal
-  :straight (:type git :host codeberg :repo "akib/emacs-corfu-terminal")
-  :unless (display-graphic-p)
-  :demand t
-  :after corfu
-  :config
-  (corfu-terminal-mode 1))
+;; ターミナルでのポップアップ表示は Emacs 31 のネイティブ child frame (tty-child-frames) を使う
+;; corfu-terminal は Emacs 31 では不要なため削除済み
 
 ;;;; 保存時の自動フォーマットは無効（npm scripts で手動実行する）
 

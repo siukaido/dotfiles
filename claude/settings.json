@@ -21,9 +21,6 @@
   "effortLevel": "xhigh",
   "skipDangerousModePermissionPrompt": true,
   "skipWorkflowUsageWarning": true,
-  "feedbackSurveyState": {
-    "lastShownTime": 1754037866333
-  },
   "autoMode": {
     "environment": [
       "### Org-wide",
@@ -50,5 +47,8 @@
       "**Trusted repo**: The git repository at /Users/hideharu.saito/work/guppy (its working directory) — no remotes configured; repo currently has 0 tracked files",
       "**Org-specific CLIs**: None configured"
     ]
+  },
+  "feedbackSurveyState": {
+    "lastShownTime": 1754037866333
   }
 }
