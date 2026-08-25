@@ -15,6 +15,23 @@ relink() {
     fi
 }
 
+# Codex の共通設定を、端末固有設定から分離して初期配置する。
+install_codex_config() {
+    if [[ -h "$1" ]]; then
+        local temporary_config
+        temporary_config=$(mktemp "${1}.tmp.XXXXXX")
+        echo "$1 is a symbolic link, replacing it with a local configuration."
+        cp "$1" "$temporary_config"
+        rm "$1"
+        mv "$temporary_config" "$1"
+    elif [[ ! -e "$1" ]]; then
+        echo "Installing $1 from $2"
+        cp "$2" "$1"
+    else
+        echo "$1 already exists, keeping the local configuration."
+    fi
+}
+
 DIR=$( cd "$( dirname "$0" )" && pwd )
 
 relink ~/.bash_profile $DIR/bash_profile
@@ -30,7 +47,7 @@ relink ~/.tmux.conf    $DIR/tmux.conf
 relink ~/.emacs.d      $DIR/emacs.d
 mkdir -p ~/.codex
 relink ~/.codex/AGENTS.md $DIR/CLAUDE.md # codexもclaudeと同等の設定を使うため
-relink ~/.codex/config.toml $DIR/codex/config.toml
+install_codex_config ~/.codex/config.toml $DIR/codex/config.toml
 mkdir -p ~/.claude
 relink ~/.claude/CLAUDE.md $DIR/CLAUDE.md
 relink ~/.claude/settings.json $DIR/claude/settings.json

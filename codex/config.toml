@@ -4,8 +4,29 @@ approval_policy = "on-request"
 [sandbox_workspace_write]
 network_access = true
 
-[projects."/Users/siukaido/work/private/dotfiles"]
-trust_level = "trusted"
+[plugins."codex-app-tools@openai-bundled"]
+enabled = true
 
-[projects."/Users/siukaido/work/private/jleage_referee"]
-trust_level = "trusted"
+[plugins."sites@openai-bundled"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."visualize@openai-bundled"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true

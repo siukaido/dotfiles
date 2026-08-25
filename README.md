@@ -35,8 +35,17 @@ cd ~/work/private/dotfiles
 | `emacs.d/` | Emacs 設定（詳細は `emacs.d/inits/README.md` を参照） |
 | `bundle/config` | Bundler 設定 |
 | `Brewfile` | Homebrew パッケージ一覧 |
+| `codex/config.toml` | Codex の端末間で共有する初期設定 |
 | `install.sh` | セットアップスクリプト |
 | `CLAUDE.md` | Claude Code 用の指示ファイル |
+
+## Codex
+
+`codex/config.toml` には、サンドボックス設定や有効にするプラグインなど、端末間で共有できる設定のみを記載する。
+
+`install.sh` は初回セットアップ時にこのファイルを `~/.codex/config.toml` へコピーする。Codex が追加するプロジェクトの信頼設定、アプリ内部のパス、通知設定などは端末固有のため、コピー後のファイルだけに保存され、dotfiles には反映されない。
+
+すでに `~/.codex/config.toml` が通常ファイルとして存在する場合は上書きしない。旧構成のシンボリックリンクが存在する場合は、現在の内容を保ったまま通常ファイルへ置き換える。
 
 ## macOS 固有の設定
 

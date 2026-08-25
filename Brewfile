@@ -77,6 +77,7 @@ brew "sl"                           # ls の typo で SL が走るジョーク�
 #--------------------------------------------------------------------
 cask "adobe-acrobat-reader"         # PDF 閲覧アプリ
 cask "appcleaner"                   # アプリの完全アンインストールツール
+cask "chatgpt"                      # OpenAI 公式 ChatGPT デスクトップアプリ
 cask "choosy"                       # リンクを開くブラウザを振り分けるツール
 cask "claude-code@latest"           # Claude Code
 cask "codex"                        # Codex
