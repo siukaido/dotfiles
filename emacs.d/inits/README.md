@@ -8,7 +8,7 @@ init-loader で読み込まれる Emacs 設定ファイル群。
 | プレフィックス | カテゴリ | 説明 |
 |---|---|---|
 | `00-` | エディタ基本設定 | テーマ、キーバインド、空白表示など |
-| `10-` | 開発支援ツール | Copilot、flycheck、検索など言語横断のツール |
+| `10-` | 開発支援ツール | flycheck、検索など言語横断のツール |
 | `20-` | 主要言語/ファイルタイプ | Go, TypeScript, Ruby, PHP など日常的に使う言語 |
 | `30-` | その他の言語/ファイルタイプ | たまに使う言語や設定ファイル系 |
 
@@ -34,12 +34,6 @@ M-x treesit-install-language-grammar RET tsx
 ```sh
 go install golang.org/x/tools/cmd/goimports@latest
 go install golang.org/x/tools/gopls@latest
-```
-
-### GitHub Copilot (10-copilot.el)
-
-```
-M-x copilot-login
 ```
 
 ### Markdown プレビュー (20-markdown.el)
