@@ -67,3 +67,8 @@ window-new-tab-position = end
 keybind = ctrl+i=text:\t
 keybind = ctrl+m=text:\r
 keybind = ctrl+[=text:\x1b
+
+# Ctrl+Enter を通常の Enter（CR）として送る
+# Ghostty は既定で xterm の modifyOtherKeys 形式（ESC[27;5;13~）で送るため、
+# 対応していないアプリでは ESC[27 だけが解釈され「;5;13~」が入力されてしまう
+keybind = ctrl+enter=text:\r
