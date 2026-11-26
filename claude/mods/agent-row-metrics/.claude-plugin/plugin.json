@@ -1,0 +1,1 @@
+{ "name": "agent-row-metrics", "version": "0.1.0", "description": "サブエージェントの行に名前・モデル・effort・トークン数・コンテキスト使用率を出す（旧 subagentStatusLine の置き換え）" }

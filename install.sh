@@ -52,7 +52,8 @@ mkdir -p ~/.claude
 relink ~/.claude/CLAUDE.md $DIR/CLAUDE.md
 relink ~/.claude/settings.json $DIR/claude/settings.json
 relink ~/.claude/statusline-command.sh $DIR/claude/statusline-command.sh
-relink ~/.claude/subagent-statusline.sh $DIR/claude/subagent-statusline.sh
+mkdir -p ~/.claude/mods
+relink ~/.claude/mods/agent-row-metrics $DIR/claude/mods/agent-row-metrics # サブエージェントの行の表示（settings.json の CLAUDE_CODE_PLUGIN_DIRS で読み込む）
 mkdir -p ~/.claude/skills
 relink ~/.claude/skills/crlf-to-lf-converter $DIR/claude/skills/crlf-to-lf-converter
 relink ~/.claude/skills/dependabot-pr-reviewer $DIR/claude/skills/dependabot-pr-reviewer
