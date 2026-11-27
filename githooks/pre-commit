@@ -1,0 +1,24 @@
+#!/bin/bash
+# コミットに、公開したくない単語（仕事のリポジトリ名・社内のホスト名など）が入っていないかを確かめる。
+#
+# 単語の一覧は、このリポジトリの外の ~/.config/dotfiles/forbidden-words に置く（1 行に 1 つ・大文字小文字は区別しない）。
+# 一覧そのものを公開しないため。一覧が無いマシンでは何もしない。
+# どうしても入れたいときは `git commit --no-verify` で飛ばせる。
+set -euo pipefail
+
+list="$HOME/.config/dotfiles/forbidden-words"
+[[ -f "$list" ]] || exit 0
+
+words=$(grep -v -e '^\s*$' -e '^#' "$list" || true)
+[[ -n "$words" ]] || exit 0
+
+# 足した行だけを見る（消した行は見ない）
+added=$(git diff --cached --no-color --unified=0 --diff-filter=ACMR | grep '^+' | grep -v '^+++' || true)
+[[ -n "$added" ]] || exit 0
+
+found=$(printf '%s\n' "$added" | grep -i -n -F -f <(printf '%s\n' "$words") || true)
+if [[ -n "$found" ]]; then
+    echo "公開したくない単語が、コミットに入っています（一覧: ${list}）" >&2
+    printf '%s\n' "$found" | head -20 >&2
+    exit 1
+fi

@@ -48,10 +48,15 @@ relink ~/.emacs.d      $DIR/emacs.d
 mkdir -p ~/.codex
 relink ~/.codex/AGENTS.md $DIR/CLAUDE.md # codexもclaudeと同等の設定を使うため
 install_codex_config ~/.codex/config.toml $DIR/codex/config.toml
+# コミットの前に、公開したくない単語が入っていないかを確かめる（githooks/pre-commit。単語の一覧は ~/.config/dotfiles/forbidden-words）
+git -C "$DIR" config core.hooksPath githooks
 mkdir -p ~/.claude
 relink ~/.claude/CLAUDE.md $DIR/CLAUDE.md
 relink ~/.claude/settings.json $DIR/claude/settings.json
 relink ~/.claude/statusline-command.sh $DIR/claude/statusline-command.sh
+mkdir -p ~/.claude/hooks
+relink ~/.claude/hooks/japanese-guard.py $DIR/claude/hooks/japanese-guard.py # 応答が英語になったら日本語で書き直させる（settings.json の hooks.Stop と PreToolUse）
+relink ~/.claude/hooks/git-guard.py $DIR/claude/hooks/git-guard.py # ユーザーがやると決めた git / gh の操作を止める（settings.json の hooks.PreToolUse の Bash）
 mkdir -p ~/.claude/mods
 relink ~/.claude/mods/agent-row-metrics $DIR/claude/mods/agent-row-metrics # サブエージェントの行の表示（settings.json の CLAUDE_CODE_PLUGIN_DIRS で読み込む）
 mkdir -p ~/.claude/skills

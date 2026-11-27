@@ -38,6 +38,8 @@ cd ~/work/private/dotfiles
 | `codex/config.toml` | Codex の端末間で共有する初期設定 |
 | `install.sh` | セットアップスクリプト |
 | `CLAUDE.md` | Claude Code 用の指示ファイル |
+| `claude/hooks/` | Claude Code の hook のスクリプト（中身は `claude/hooks/README.md`） |
+| `githooks/pre-commit` | コミットに公開したくない単語が入っていないかを確かめる（単語の一覧はリポジトリの外の `~/.config/dotfiles/forbidden-words`。`install.sh` が `core.hooksPath` を設定する） |
 
 ## Codex
 
